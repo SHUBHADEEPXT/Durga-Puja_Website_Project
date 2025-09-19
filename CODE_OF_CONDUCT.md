@@ -6,4 +6,4 @@ This project maintains high professional standards...
 ## Current Status: CLOSED DEVELOPMENT
 - No external contributions accepted currently
 - Future collaboration planned for scaling phase
-- Contact: your-email@domain.com for inquiries
+- Contact: shubhadeep010@gmail.com for inquiries
