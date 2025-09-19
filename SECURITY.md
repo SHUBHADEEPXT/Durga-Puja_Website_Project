@@ -1,7 +1,7 @@
 # Security Policy
 
 ## Reporting Security Issues
-Contact: security@yourdomain.com
+Contact: shubhadeep010@gmail.com
 
 ## Security Measures Implemented:
 - JWT Authentication
