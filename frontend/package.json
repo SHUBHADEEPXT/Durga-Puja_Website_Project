@@ -12,26 +12,26 @@
     "format": "prettier --write src"
   },
   "dependencies": {
+    "axios": "^1.4.0",
+    "clsx": "^1.2.1",
+    "lucide-react": "^0.263.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.1",
-    "lucide-react": "^0.263.1",
-    "axios": "^1.4.0",
-    "react-query": "^3.39.3",
     "react-hook-form": "^7.45.1",
     "react-hot-toast": "^2.4.1",
-    "clsx": "^1.2.1"
+    "react-query": "^3.39.3",
+    "react-router-dom": "^6.8.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.3",
-    "vite": "^4.4.5",
-    "vitest": "^0.34.1",
+    "autoprefixer": "^10.4.14",
     "eslint": "^8.45.0",
     "eslint-plugin-react": "^7.32.2",
+    "postcss": "^8.4.27",
     "prettier": "^2.8.8",
     "tailwindcss": "^3.3.3",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.27"
+    "vite": "^4.4.5",
+    "vitest": "^0.34.1"
   },
   "author": "Shubhadeep",
   "license": "MIT"
