@@ -1,0 +1,422 @@
+# .github/workflows/production-cicd.yml
+name: Production CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+    types: [opened, synchronize, reopened]
+
+env:
+  NODE_VERSION: '18'
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  # Static Code Analysis & Linting
+  code-quality:
+    name: Code Quality Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for SonarCloud
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          cd frontend && npm ci
+          cd ../backend && npm ci
+
+      - name: ESLint Analysis - Frontend
+        run: |
+          cd frontend
+          npx eslint src/ --format=json --output-file=eslint-report.json || true
+
+      - name: ESLint Analysis - Backend  
+        run: |
+          cd backend
+          npx eslint src/ --format=json --output-file=eslint-report.json || true
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Upload ESLint reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: eslint-reports
+          path: |
+            frontend/eslint-report.json
+            backend/eslint-report.json
+
+  # Security Vulnerability Scanning
+  security-scan:
+    name: Security Vulnerability Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          cd frontend && npm ci
+          cd ../backend && npm ci
+
+      - name: Snyk Security Scan
+        uses: snyk/actions/node@master
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=high --all-projects
+
+      - name: npm audit - Frontend
+        run: |
+          cd frontend
+          npm audit --audit-level high --json > npm-audit-frontend.json || true
+
+      - name: npm audit - Backend
+        run: |
+          cd backend
+          npm audit --audit-level high --json > npm-audit-backend.json || true
+
+      - name: Upload security reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: security-reports
+          path: |
+            frontend/npm-audit-frontend.json
+            backend/npm-audit-backend.json
+
+  # Frontend Build & Test
+  frontend-build:
+    name: Frontend Build & Test
+    runs-on: ubuntu-latest
+    needs: [code-quality]
+    defaults:
+      run:
+        working-directory: ./frontend
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test -- --coverage --watchAll=false
+        env:
+          CI: true
+
+      - name: Build application
+        run: npm run build
+        env:
+          VITE_API_URL: ${{ secrets.STAGING_API_URL }}
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: frontend-dist
+          path: frontend/dist/
+          retention-days: 5
+
+      - name: Upload test coverage
+        uses: codecov/codecov-action@v3
+        with:
+          file: frontend/coverage/lcov.info
+          flags: frontend
+
+  # Backend Build & Test
+  backend-build:
+    name: Backend Build & Test
+    runs-on: ubuntu-latest
+    needs: [code-quality]
+    defaults:
+      run:
+        working-directory: ./backend
+    
+    services:
+      mongodb:
+        image: mongo:6.0
+        env:
+          MONGO_INITDB_DATABASE: test
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd "mongosh --eval 'db.admin.ping()'"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test -- --coverage
+        env:
+          NODE_ENV: test
+          MONGODB_URI: mongodb://localhost:27017/test
+          JWT_SECRET: test-jwt-secret
+
+      - name: Upload test coverage
+        uses: codecov/codecov-action@v3
+        with:
+          file: backend/coverage/lcov.info
+          flags: backend
+
+  # Container Image Building
+  build-images:
+    name: Build Container Images
+    runs-on: ubuntu-latest
+    needs: [frontend-build, backend-build, security-scan]
+    if: github.event_name == 'push'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: |
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-frontend
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-backend
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Build and push frontend image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./frontend
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-frontend:${{ github.sha }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build and push backend image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./backend
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-backend:${{ github.sha }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # Deploy to Staging
+  deploy-staging:
+    name: Deploy to Staging Environment
+    runs-on: ubuntu-latest
+    needs: [build-images]
+    if: github.ref == 'refs/heads/develop'
+    environment: staging
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy frontend to Vercel (Preview)
+        uses: vercel/action@v1
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: frontend
+          vercel-args: '--prebuilt'
+
+      - name: Deploy backend to Render (Staging)
+        run: |
+          curl -X POST "${{ secrets.RENDER_STAGING_DEPLOY_HOOK }}" \
+            -H "Content-Type: application/json" \
+            -d '{"imageUrl":"${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-backend:${{ github.sha }}"}'
+
+      - name: Health check - Staging
+        run: |
+          sleep 60  # Wait for deployment
+          curl -f ${{ secrets.STAGING_API_URL }}/health || exit 1
+
+      - name: Run integration tests
+        run: |
+          cd frontend
+          npm run test:e2e:staging
+        env:
+          STAGING_URL: ${{ secrets.STAGING_FRONTEND_URL }}
+
+  # Deploy to Production
+  deploy-production:
+    name: Deploy to Production Environment
+    runs-on: ubuntu-latest
+    needs: [build-images, security-scan]
+    if: github.ref == 'refs/heads/main'
+    environment: production
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: frontend-dist
+          path: frontend/dist/
+
+      - name: Deploy frontend to Vercel (Production)
+        uses: vercel/action@v1
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: frontend
+          vercel-args: '--prod --prebuilt'
+
+      - name: Deploy backend to Render (Production)
+        run: |
+          curl -X POST "${{ secrets.RENDER_PRODUCTION_DEPLOY_HOOK }}" \
+            -H "Content-Type: application/json" \
+            -d '{"imageUrl":"${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-backend:${{ github.sha }}"}'
+
+      - name: Health check - Production
+        run: |
+          sleep 90  # Wait for production deployment
+          curl -f ${{ secrets.PRODUCTION_API_URL }}/health || exit 1
+
+      - name: Smoke tests - Production
+        run: |
+          curl -f ${{ secrets.PRODUCTION_FRONTEND_URL }} || exit 1
+          curl -f ${{ secrets.PRODUCTION_API_URL }}/api/pandals || exit 1
+
+  # Performance Testing
+  performance-test:
+    name: Performance Testing
+    runs-on: ubuntu-latest
+    needs: [deploy-staging]
+    if: github.ref == 'refs/heads/develop'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          urls: |
+            ${{ secrets.STAGING_FRONTEND_URL }}
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      - name: Load testing with Artillery
+        run: |
+          npm install -g artillery
+          artillery quick --count 50 --num 5 ${{ secrets.STAGING_API_URL }}/api/pandals
+
+  # Database Migration
+  database-migration:
+    name: Database Migration
+    runs-on: ubuntu-latest
+    needs: [deploy-production]
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Run database migrations
+        run: |
+          cd backend
+          npm ci
+          npm run migrate:prod
+        env:
+          MONGODB_URI: ${{ secrets.PRODUCTION_MONGODB_URI }}
+
+  # Notification & Reporting
+  notify-teams:
+    name: Notify Teams
+    runs-on: ubuntu-latest
+    needs: [deploy-production, deploy-staging, performance-test]
+    if: always()
+    
+    steps:
+      - name: Success Notification
+        if: ${{ needs.deploy-production.result == 'success' || needs.deploy-staging.result == 'success' }}
+        run: |
+          curl -H "Content-Type: application/json" \
+            -d '{"text":"🚀 Durga Puja Platform deployed successfully!\nEnvironment: ${{ github.ref_name }}\nCommit: ${{ github.sha }}"}' \
+            ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Failure Notification
+        if: ${{ needs.deploy-production.result == 'failure' || needs.deploy-staging.result == 'failure' }}
+        run: |
+          curl -H "Content-Type: application/json" \
+            -d '{"text":"❌ Deployment failed for Durga Puja Platform\nBranch: ${{ github.ref_name }}\nCommit: ${{ github.sha }}\nCheck: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"}' \
+            ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Generate deployment report
+        run: |
+          echo "## Deployment Report" > deployment-report.md
+          echo "- Branch: ${{ github.ref_name }}" >> deployment-report.md
+          echo "- Commit: ${{ github.sha }}" >> deployment-report.md
+          echo "- Timestamp: $(date)" >> deployment-report.md
+          echo "- Status: ${{ job.status }}" >> deployment-report.md
+
+      - name: Upload deployment report
+        uses: actions/upload-artifact@v3
+        with:
+          name: deployment-report
+          path: deployment-report.md
