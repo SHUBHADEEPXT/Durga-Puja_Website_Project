@@ -1,8 +1,6 @@
-const request = require('supertest');
-
-// Simple test since we're using CommonJS
+// Basic test placeholder
 describe('API Health Check', () => {
-  it('should be defined', () => {
+  it('should pass basic test', () => {
     expect(true).toBe(true);
   });
 });
