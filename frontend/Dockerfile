@@ -3,10 +3,16 @@ FROM node:18-alpine AS builder
 
 WORKDIR /app
 
+# Copy package files
 COPY package*.json ./
-RUN npm ci --only=production
 
+# Install dependencies
+RUN npm install
+
+# Copy source code
 COPY . .
+
+# Build application
 RUN npm run build
 
 # Production stage
