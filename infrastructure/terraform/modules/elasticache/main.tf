@@ -36,8 +36,8 @@ resource "aws_security_group" "redis" {
 
 # ElastiCache Redis Cluster
 resource "aws_elasticache_replication_group" "main" {
-  replication_group_id       = "${var.project_name}-redis"
-  replication_group_description = "Redis cache for Durga Puja Platform"
+  replication_group_id = "${var.project_name}-redis"
+  description          = "Redis cache for Durga Puja Platform"
   
   engine               = "redis"
   engine_version       = "7.0"
