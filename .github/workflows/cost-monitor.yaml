@@ -1,0 +1,33 @@
+name: AWS Cost Monitor
+
+on:
+  schedule:
+    - cron: '0 9 * * *'  # Daily at 9 AM UTC
+  workflow_dispatch:
+
+jobs:
+  check-costs:
+    name: Check AWS Costs
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+    
+    - name: Get cost estimates
+      run: |
+        END_DATE=$(date +%Y-%m-%d)
+        START_DATE=$(date -d '7 days ago' +%Y-%m-%d)
+        
+        aws ce get-cost-and-usage \
+          --time-period Start=$START_DATE,End=$END_DATE \
+          --granularity DAILY \
+          --metrics BlendedCost \
+          --output json > costs.json
+        
+        echo "## 💰 AWS Cost Report (Last 7 Days)" >> $GITHUB_STEP_SUMMARY
+        cat costs.json | jq -r '.ResultsByTime[] | "- \(.TimePeriod.Start): $\(.Total.BlendedCost.Amount)"' >> $GITHUB_STEP_SUMMARY
