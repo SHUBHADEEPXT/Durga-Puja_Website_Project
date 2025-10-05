@@ -67,3 +67,5 @@ jspm_packages/
 # Database
 *.sqlite
 *.db
+terraform.tfvars
+*.tfvars
