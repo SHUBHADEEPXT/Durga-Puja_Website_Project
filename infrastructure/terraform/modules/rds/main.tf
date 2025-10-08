@@ -47,7 +47,7 @@ resource "aws_db_instance" "main" {
   storage_encrypted      = true
   
   db_name  = "durgapuja"
-  username = "admin"
+  username = "dbadmin"
   password = var.db_password
 
   db_subnet_group_name   = aws_db_subnet_group.main.name
