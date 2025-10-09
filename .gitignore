@@ -69,3 +69,7 @@ jspm_packages/
 *.db
 terraform.tfvars
 *.tfvars
+.github/workflows/*.backup
+infrastructure/terraform/tfplan
+infrastructure/terraform/.terraform/
+infrastructure/terraform/.terraform.lock.hcl
