@@ -31,27 +31,27 @@
 ### 🎪 What Makes This Special?
 ```ascii
 ┌─────────────────────────────────────────────────────────────────┐
-│  🏗️  Infrastructure as CCode        ⚙️   omplete Automation      │
-│  🐳  Containerized Apps         │  📊  Real-time Monitoring     │
-│  ☸️  Kubernetes Orchestration   │  🔄  GitOps Workflows          │
-│  🔐  Security First Design      │  📈  Auto-scaling Ready       │
+│  🏗️  Infrastructure as Code     |  ⚙️  Complete Automation     │
+│  🐳  Containerized Apps         │  📊  Real-time Monitoring    │
+│  ☸️  Kubernetes Orchestration   │  🔄  GitOps Workflows        │
+│  🔐  Security First Design      │  📈  Auto-scaling Ready      │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
 <div align="center">
 ## 💼 Built With Enterprise-Grade Technologies== Tech Stack & Tools
 
-[![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)]  
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)]  
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)  
-![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)  
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)  
-![ArgoCD](https://img.shields.io/badge/ArgoCD-EF7B4D?style=for-the-badge&logo=argo&logoColor=white)  
-![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white)  
-![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white)  
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)  
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)  
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)  
+[![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)]
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)] 
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white) 
+![ArgoCD](https://img.shields.io/badge/ArgoCD-EF7B4D?style=for-the-badge&logo=argo&logoColor=white)
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 
 </div>
@@ -66,24 +66,24 @@
 
 #### ☁️ AWS Cloud Infrastructure
 
-✅ Multi-AZ VPC Design (3 Availability Zones)
-✅ 9 Subnets (Public, Private, Database tiers)
-✅ NAT Gateways for Private Subnet Internet
-✅ Internet Gateway for Public Access
-✅ Security Groups & Network ACLs
-✅ Route Tables with Proper Routing
+✅ Multi-AZ VPC Design (3 Availability Zones)  
+✅ 9 Subnets (Public, Private, Database tiers)  
+✅ NAT Gateways for Private Subnet Internet  
+✅ Internet Gateway for Public Access  
+✅ Security Groups & Network ACLs  
+✅ Route Tables with Proper Routing  
 
 </td>
 <td width="50%">
 
 #### 🎛️ Managed Services
 
-✅ Amazon EKS (Kubernetes 1.28)
-✅ Amazon RDS (PostgreSQL 15)
-✅ Amazon ElastiCache (Redis 7.0)
-✅ Amazon S3 (Encrypted Storage)
-✅ Application Load Balancer
-✅ Auto Scaling Groups
+✅ Amazon EKS (Kubernetes 1.28)  
+✅ Amazon RDS (PostgreSQL 15)   
+✅ Amazon ElastiCache (Redis 7.0)  
+✅ Amazon S3 (Encrypted Storage)  
+✅ Application Load Balancer  
+✅ Auto Scaling Groups  
 
 </td>
 </tr>
@@ -96,25 +96,25 @@
 
 #### 🚀 CI/CD Pipeline
 
-✅ Automated Testing (Frontend & Backend)
-✅ Security Scanning (npm audit)
-✅ Docker Image Building
-✅ Multi-stage Builds
-✅ Image Tagging with Git SHA
-✅ Push to Docker Hub
-✅ Infrastructure Validation
+✅ Automated Testing (Frontend & Backend)  
+✅ Security Scanning (npm audit)  
+✅ Docker Image Building  
+✅ Multi-stage Builds  
+✅ Image Tagging with Git SHA  
+✅ Push to Docker Hub  
+✅ Infrastructure Validation  
 
 </td>
 <td width="50%">
 
 #### 🔄 GitOps Workflow
 
-✅ ArgoCD for Continuous Deployment
-✅ Declarative Configuration
-✅ Automated Sync from Git
-✅ Self-healing Applications
-✅ Rollback Capabilities
-✅ Multi-environment Support
+✅ ArgoCD for Continuous Deployment  
+✅ Declarative Configuration  
+✅ Automated Sync from Git  
+✅ Self-healing Applications  
+✅ Rollback Capabilities  
+✅ Multi-environment Support  
 
 </td>
 </tr>
@@ -127,89 +127,86 @@
 
 #### 📦 Container Orchestration
 
-✅ Deployments with 3 Replicas
-✅ Horizontal Pod Autoscaling (3-10 pods)
-✅ Services (ClusterIP & LoadBalancer)
-✅ Ingress with AWS ALB Controller
-✅ ConfigMaps for Configuration
-✅ Secrets Management
+✅ Deployments with 3 Replicas  
+✅ Horizontal Pod Autoscaling (3-10 pods)  
+✅ Services (ClusterIP & LoadBalancer)  
+✅ Ingress with AWS ALB Controller  
+✅ ConfigMaps for Configuration  
+✅ Secrets Management  
 
 </td>
 <td width="50%">
 
 ### 📊 Monitoring & Observability
 
-✅ Prometheus for Metrics Collection
-✅ Grafana Dashboards
-✅ Real-time Cluster Monitoring
-✅ Pod & Node Metrics
-✅ Resource Usage Tracking
-✅ Custom Alerts (Configurable)
+✅ Prometheus for Metrics Collection  
+✅ Grafana Dashboards  
+✅ Real-time Cluster Monitoring  
+✅ Pod & Node Metrics  
+✅ Resource Usage Tracking  
+✅ Custom Alerts (Configurable)  
 
 </td>
 </tr>
 </table>
 
 ---
+## 🧱 Architecture
 
-## 🏗️ Architecture
-<div align="center">
 ```mermaid
 graph TB
-    subgraph "Developer Workflow"
-        A[👨‍💻 Developer] -->|Push Code| B[GitHub Repository]
-    end
 
+  subgraph "Developer Workflow"
+    A[👩‍💻 Developer] -->|Push Code| B[GitHub Repository]
+  end
 
-subgraph "CI/CD Pipeline"
+  subgraph "CI/CD Pipeline"
     B -->|Trigger| C[GitHub Actions]
     C -->|Test| D[Run Tests]
     C -->|Scan| E[Security Scan]
     C -->|Build| F[Docker Build]
     F -->|Push| G[Docker Hub]
-    C -->|Validate| H[Terraform Check]
-    C -->|Validate| I[Kubernetes Check]
-end
+    G -->|Validate| H[Terraform Check]
+    H -->|Validate| I[Kubernetes Check]
+  end
 
-subgraph "GitOps Deployment"
+  subgraph "GitOps Deployment"
     G -->|Image Available| J[ArgoCD]
-    B -->|Monitor| J
-    J -->|Sync| K[Kubernetes Cluster]
-end
+    J -->|Monitor| K[Kubernetes Cluster]
+  end
 
-subgraph "AWS Infrastructure"
+  subgraph "AWS Infrastructure"
     K -->|Deploy to| L[EKS Cluster]
     L -->|Frontend Pods| M[React App]
     L -->|Backend Pods| N[Node.js API]
     N -->|Connect| O[RDS PostgreSQL]
     N -->|Cache| P[ElastiCache Redis]
     M -->|Store| Q[S3 Bucket]
-end
+  end
 
-subgraph "Monitoring"
+  subgraph "Monitoring"
     L -->|Metrics| R[Prometheus]
     R -->|Visualize| S[Grafana]
-end
+  end
 
-subgraph "Traffic Flow"
+  subgraph "Traffic Flow"
     T[🌐 Internet] -->|HTTPS| U[Application Load Balancer]
     U -->|Route| M
     U -->|API Calls| N
-end
+  end
 
-style A fill:#FF6B6B
-style B fill:#4ECDC4
-style C fill:#95E1D3
-style L fill:#F38181
-style R fill:#AA96DA
-style S fill:#FCBAD3
-
+  style A fill:#FF6B6B
+  style B fill:#4ECDC4
+  style C fill:#95E1D3
+  style L fill:#F38181
+  style R fill:#AA96DA
+  style S fill:#FCBAD3
 ```
 
-
-</div>
+---
 
 ### 🎯 High-Level Architecture
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                         Internet Users                           │
@@ -229,7 +226,7 @@ style S fill:#FCBAD3
 │  (React + Vite)  │◄──────────►│  (Node.js)       │
 │  Replicas: 3-10  │            │  Replicas: 3-10  │
 └──────────────────┘            └────────┬─────────┘
-					 │					  
+					                               │					  
                     ┌────────────────────┼────────────────────┐
                     │                    │                    │
                     ▼                    ▼                    ▼
@@ -237,11 +234,11 @@ style S fill:#FCBAD3
          │   RDS Postgres   │  │ ElastiCache Redis│  │  S3 Bucket  │
          │   (Database)     │  │    (Cache)       │  │  (Storage)  │
          └──────────────────┘  └──────────────────┘  └─────────────┘
-
 ```
 ---
 
 ### 🔐 Network Architecture
+
 ```
 VPC: 10.0.0.0/16
 │
@@ -311,36 +308,36 @@ cd Durga-Puja_Website_Project
 #### 3️⃣ Set Up GitHub Secrets
 
 Add these secrets to your GitHub repository:  
-- DOCKER_USERNAME         # Your Docker Hub username
-- DOCKER_PASSWORD         # Your Docker Hub password
-- AWS_ACCESS_KEY_ID       # AWS Access Key
-- AWS_SECRET_ACCESS_KEY   # AWS Secret Key
-- MONGODB_PASSWORD        # Database password
-- REDIS_PASSWORD          # Redis password
-- VITE_API_URL           # Frontend API URL
+- DOCKER_USERNAME         # Your Docker Hub username  
+- DOCKER_PASSWORD         # Your Docker Hub password  
+- AWS_ACCESS_KEY_ID       # AWS Access Key  
+- AWS_SECRET_ACCESS_KEY   # AWS Secret Key  
+- MONGODB_PASSWORD        # Database password  
+- REDIS_PASSWORD          # Redis password  
+- VITE_API_URL           # Frontend API URL  
 
 
 #### 4️⃣ Deploy Infrastructure
 ```
 cd infrastructure/terraform
 ```
-- Initialize Terraform
+- Initialize Terraform  
 ``` terraform init```
 
-- Review the plan
+- Review the plan  
 ```terraform plan```
 
-- Deploy (takes ~25 minutes)
+- Deploy (takes ~25 minutes)  
 ```terraform apply -auto-approve```
 
 
 #### 5️⃣ Configure kubectl
 
-- Update kubeconfig
+- Update kubeconfig  
 ```
 aws eks update-kubeconfig --region us-east-1 --name durga-puja-eks
 ```
-- Verify connection
+- Verify connection  
 ```
 kubectl get nodes
 ```
@@ -349,7 +346,7 @@ kubectl get nodes
 ```
 cd ../kubernetes
 ```
-- Deploy all resources
+- Deploy all resources  
 ```
 kubectl apply -f namespaces/
 kubectl apply -f configmaps/
@@ -358,19 +355,19 @@ kubectl apply -f deployments/
 kubectl apply -f services/
 kubectl apply -f ingress/
 ```
-- Wait for pods
+- Wait for pods  
 ```
 kubectl get pods -n durga-puja -w
 ```
 
 
 #### 7️⃣ Install Monitoring
-- Add Helm repo
+- Add Helm repo  
 ```
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
 ```
-- Install monitoring stack
+- Install monitoring stack  
 ```
 helm install monitoring prometheus-community/kube-prometheus-stack \
   --namespace monitoring \
@@ -379,12 +376,12 @@ helm install monitoring prometheus-community/kube-prometheus-stack \
 ```
 
 #### 8️⃣ Install ArgoCD
-- Install ArgoCD
+- Install ArgoCD  
 ```
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
-- Get admin password
+- Get admin password  
 ```
 kubectl -n argocd get secret argocd-initial-admin-secret \
   -o jsonpath="{.data.password}" | base64 -d
@@ -392,13 +389,13 @@ kubectl -n argocd get secret argocd-initial-admin-secret \
 
 
 #### 9️⃣ Access Applications
-- Get Application URL
+- Get Application URL  
 ```kubectl get ingress -n durga-puja```
 
-- Port-forward Grafana
+- Port-forward Grafana  
 ```kubectl port-forward -n monitoring svc/monitoring-grafana 3000:80```
 
-- Port-forward ArgoCD
+- Port-forward ArgoCD  
 ```kubectl port-forward -n argocd svc/argocd-server 8080:443```
 
 
@@ -421,9 +418,9 @@ kubectl -n argocd get secret argocd-initial-admin-secret \
 
 📊 Project Statistics
 <div align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=SHUBHADEEPXT&show_icons=true&theme=radical" alt="GitHub Stats" />
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=SHUBHADEEPXT&theme=radical" alt="GitHub Streak" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SHUBHADEEPXT&layout=compact&theme=radical" alt="Top Languages" />
+<img src="https://github-readme-stats.vercel.app/api?username=SHUBHADEEPXT&show_icons=true&theme=radical" alt="GitHub Stats" />  
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=SHUBHADEEPXT&theme=radical" alt="GitHub Streak" />  
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SHUBHADEEPXT&layout=compact&theme=radical" alt="Top Languages" />  
 </div>
 
 ---
@@ -434,31 +431,31 @@ kubectl -n argocd get secret argocd-initial-admin-secret \
 <td width="33%">
 #### ☁️ Cloud & Infrastructure
 
-AWS VPC design patterns
-Multi-AZ high availability
-Security group configuration
-IAM roles and policies
-Cost optimization strategies
+AWS VPC design patterns  
+Multi-AZ high availability  
+Security group configuration  
+IAM roles and policies  
+Cost optimization strategies  
 
 </td>
 <td width="33%">
 #### 🔄 DevOps & Automation
 
-CI/CD pipeline design
-GitOps workflows
-Container orchestration
-Infrastructure as Code
-Automated testing strategies
+CI/CD pipeline design  
+GitOps workflows  
+Container orchestration  
+Infrastructure as Code  
+Automated testing strategies  
 
 </td>
 <td width="33%">
 #### 📊 Monitoring & Operations
 
-Metrics collection
-Dashboard creation
-Alert configuration
-Log aggregation
-Performance tuning
+Metrics collection  
+Dashboard creation  
+Alert configuration  
+Log aggregation  
+Performance tuning  
 
 </td>
 </tr>
@@ -468,30 +465,30 @@ Performance tuning
 
 ##🛣️ Roadmap
 
-- Complete AWS infrastructure with Terraform
-- Kubernetes cluster setup and configuration
-- CI/CD pipeline with GitHub Actions
-- Docker image registry integration
-- GitOps with ArgoCD
-- Monitoring with Prometheus/Grafana
-- Service Mesh (Istio) integration
-- Multi-region deployment
-- Advanced security scanning
-- Automated backup and DR
-- Canary deployments
-- Integration testing automation
+- Complete AWS infrastructure with Terraform  
+- Kubernetes cluster setup and configuration  
+- CI/CD pipeline with GitHub Actions  
+- Docker image registry integration  
+- GitOps with ArgoCD  
+- Monitoring with Prometheus/Grafana  
+- Service Mesh (Istio) integration  
+- Multi-region deployment  
+- Advanced security scanning  
+- Automated backup and DR  
+- Canary deployments  
+- Integration testing automation  
 
 ---
 
 ## 🤝 Contributing
 
-- Contributions, issues, and feature requests are welcome but from Early December 2025!
+- Contributions, issues, and feature requests are welcome but from Early December 2025!  
 
-- Fork the Project
-- Create your Feature Branch (git checkout -b feature/AmazingFeature)
-- Commit your Changes (git commit -m 'Add some AmazingFeature')
-- Push to the Branch (git push origin feature/AmazingFeature)
-- Open a Pull Request
+- Fork the Project  
+- Create your Feature Branch (git checkout -b feature/AmazingFeature)  
+- Commit your Changes (git commit -m 'Add some AmazingFeature')  
+- Push to the Branch (git push origin feature/AmazingFeature)  
+- Open a Pull Request  
 
 **See CONTRIBUTING.md for detailed guidelines.**  
 
