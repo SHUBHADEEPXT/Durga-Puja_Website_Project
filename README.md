@@ -38,8 +38,10 @@
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-<div align="center">
+---
 ## 💼 Built With Enterprise-Grade Technologies== Tech Stack & Tools
+
+<div align="center">
 
 [![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)]
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)] 
@@ -55,6 +57,7 @@
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 
 </div>
+
 ---
 
 ## ✨ Features
@@ -322,13 +325,19 @@ Add these secrets to your GitHub repository:
 cd infrastructure/terraform
 ```
 - Initialize Terraform  
-``` terraform init```
+``` 
+terraform init
+```
 
 - Review the plan  
-```terraform plan```
+```
+terraform plan 
+```
 
 - Deploy (takes ~25 minutes)  
-```terraform apply -auto-approve```
+```
+terraform apply -auto-approve
+```
 
 
 #### 5️⃣ Configure kubectl
@@ -390,14 +399,19 @@ kubectl -n argocd get secret argocd-initial-admin-secret \
 
 #### 9️⃣ Access Applications
 - Get Application URL  
-```kubectl get ingress -n durga-puja```
+```
+kubectl get ingress -n durga-puja
+```
 
 - Port-forward Grafana  
-```kubectl port-forward -n monitoring svc/monitoring-grafana 3000:80```
+```
+kubectl port-forward -n monitoring svc/monitoring-grafana 3000:80
+```
 
 - Port-forward ArgoCD  
-```kubectl port-forward -n argocd svc/argocd-server 8080:443```
-
+```
+kubectl port-forward -n argocd svc/argocd-server 8080:443
+```
 
 ---
 
@@ -416,46 +430,37 @@ kubectl -n argocd get secret argocd-initial-admin-secret \
 
 ---
 
-📊 Project Statistics
-<div align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=SHUBHADEEPXT&show_icons=true&theme=radical" alt="GitHub Stats" />  
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=SHUBHADEEPXT&theme=radical" alt="GitHub Streak" />  
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SHUBHADEEPXT&layout=compact&theme=radical" alt="Top Languages" />  
-</div>
-
----
-
 ##🎓 What I Learned
 <table>
 <tr>
 <td width="33%">
 #### ☁️ Cloud & Infrastructure
 
-AWS VPC design patterns  
-Multi-AZ high availability  
-Security group configuration  
-IAM roles and policies  
-Cost optimization strategies  
+- AWS VPC design patterns  
+- Multi-AZ high availability  
+- Security group configuration  
+- IAM roles and policies  
+- Cost optimization strategies  
 
 </td>
 <td width="33%">
 #### 🔄 DevOps & Automation
 
-CI/CD pipeline design  
-GitOps workflows  
-Container orchestration  
-Infrastructure as Code  
-Automated testing strategies  
+- CI/CD pipeline design  
+- GitOps workflows  
+- Container orchestration  
+- Infrastructure as Code  
+- Automated testing strategies  
 
 </td>
 <td width="33%">
 #### 📊 Monitoring & Operations
 
-Metrics collection  
-Dashboard creation  
-Alert configuration  
-Log aggregation  
-Performance tuning  
+- Metrics collection  
+- Dashboard creation  
+- Alert configuration  
+- Log aggregation  
+- Performance tuning  
 
 </td>
 </tr>
@@ -534,15 +539,27 @@ Shubhadeep
 
 ---
 
+- 💫 Show Your Support  
+- If this project helped you learn something new, please give it a ⭐️!  
+
 <div align="center">
-💫 Show Your Support
-If this project helped you learn something new, please give it a ⭐️!
-Made with ❤️ by Shubhadeep
+Made with ❤️❤️❤️ by Shubhadeep  
+</div>
+
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="500">
+
 ```
 ⭐️ Star this repository if you found it helpful!
 🍴 Fork it to create your own version!
 📫 Connect with me on LinkedIn!
 ```
+
+---
+
+## 📊 GithuB Statistics
+
+<div align="center">
+<img src="https://github-readme-stats.vercel.app/api?username=SHUBHADEEPXT&show_icons=true&theme=radical" alt="GitHub Stats" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=SHUBHADEEPXT&theme=radical" alt="GitHub Streak" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SHUBHADEEPXT&layout=compact&theme=radical" alt="Top Languages" />
 </div>
-```
