@@ -36,10 +36,6 @@
 
 Install these tools before starting:
 
-<table>
-<tr>
-<td width="50%">
-
 **Command Line Tools**
 
 ### AWS CLI
@@ -67,8 +63,6 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 ```
 
-</td>
-<td width="50%">
 
 ---
 
