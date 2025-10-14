@@ -42,14 +42,14 @@
 ### Project Snapshot
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│  Duration:        2 week implementation                          │
-│  Cloud Provider:  AWS                                            │
-│  Deployment:      October 2024                                   │
-│  Status:          ✅ Production-Ready                            │
-│  Infrastructure:  49+ AWS Resources                              │
-│  Automation:      100% Automated Deployment                      │
-│  Scalability:     3-10 pods (auto-scaling)                       │
-│  Availability:    Multi-AZ (3 Availability Zones)                │
+│  Duration:        2 week implementation                         │
+│  Cloud Provider:  AWS                                           │
+│  Deployment:      October 2024                                  │
+│  Status:          ✅ Production-Ready                           │
+│  Infrastructure:  49+ AWS Resources                             │
+│  Automation:      100% Automated Deployment                     │
+│  Scalability:     3-10 pods (auto-scaling)                      │
+│  Availability:    Multi-AZ (3 Availability Zones)               │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -137,7 +137,7 @@ Photo-sharing applications for cultural events face several challenges:
                 ▼                                     ▼
     ┌─────────────────────┐              ┌─────────────────────┐
     │   Frontend Pods     │◄────────────►│   Backend Pods      │
-    │   (React + Vite)    │              │   (Node.js + Express)│
+    │   (React + Vite)    │              │  (Node.js + Express)│
     │   Replicas: 3-10    │              │   Replicas: 3-10    │
     └─────────────────────┘              └──────────┬──────────┘
                                                     │
@@ -383,10 +383,10 @@ Photo-sharing applications for cultural events face several challenges:
 ### Infrastructure Statistics
 ```
 ┌─────────────────────────────────────────────────────────┐
-│  Total AWS Resources:           49+                      │
+│  Total AWS Resources:           49+                     │
 │  VPC Subnets:                   9 (across 3 AZs)        │
 │  Kubernetes Nodes:              5 (t3.medium)           │
-│  Application Replicas:          6 (3 frontend, 3 backend)│
+│  Application Replicas:          6 (3 frontend,3 backend)│
 │  Auto-scaling Range:            3-10 pods per service   │
 │  Load Balancers:                2 (ALB + NLB)           │
 │  Managed Databases:             2 (RDS + ElastiCache)   │
@@ -396,23 +396,23 @@ Photo-sharing applications for cultural events face several challenges:
 ### Deployment Metrics
 ```
 ┌─────────────────────────────────────────────────────────┐
-│  Infrastructure Provisioning:   ~25 minutes              │
-│  Application Deployment:        ~10 minutes              │
-│  CI/CD Pipeline Duration:       ~3-4 minutes             │
-│  Docker Image Build:            ~2 minutes               │
-│  ArgoCD Sync Time:              <1 minute                │
-│  Zero-downtime Deployments:     ✅ Yes                   │
+│  Infrastructure Provisioning:   ~25 minutes             │
+│  Application Deployment:        ~10 minutes             │
+│  CI/CD Pipeline Duration:       ~3-4 minutes            │
+│  Docker Image Build:            ~2 minutes              │
+│  ArgoCD Sync Time:              <1 minute               │
+│  Zero-downtime Deployments:     ✅ Yes                  │
 └─────────────────────────────────────────────────────────┘
 ```
 
 ### Performance Metrics
 ```
 ┌─────────────────────────────────────────────────────────┐
-│  Auto-scaling Trigger:          70% CPU utilization      │
-│  Scale-up Time:                 ~2 minutes               │
-│  Pod Startup Time:              ~30 seconds              │
-│  Application Response Time:     <200ms (avg)             │
-│  High Availability:             99.9% uptime             │
+│  Auto-scaling Trigger:          70% CPU utilization     │
+│  Scale-up Time:                 ~2 minutes              │
+│  Pod Startup Time:              ~30 seconds             │
+│  Application Response Time:     <200ms (avg)            │
+│  High Availability:             99.9% uptime            │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -833,12 +833,12 @@ Implementation Phase (2 week):
 
 | Document | Description |
 |----------|-------------|
-| [📖 README](../README.md) | Project introduction and quick start |
-| [🏗️ ARCHITECTURE](ARCHITECTURE.md) | Detailed architecture documentation |
-| [🚀 DEPLOYMENT](DEPLOYMENT.md) | Complete deployment guide |
-| [🔧 TROUBLESHOOTING](TROUBLESHOOTING.md) | Issue resolution guide |
-| [💻 IMPLEMENTATION](IMPLEMENTATION.md) | Technical implementation details |
-| [🔐 SECURITY](SECURITY.md) | Security practices and guidelines |
+| [📖 README](./README.md) | Project introduction and quick start |
+| [🏗️ ARCHITECTURE](A./docs/architecture/ARCHITECTURE.md) | Detailed architecture documentation |
+| [🚀 DEPLOYMENT](./docs/DEPLOYMENT.md) | Complete deployment guide |
+| [🔧 TROUBLESHOOTING](/docs/troubleshooting/TROUBLESHOOTING.md) | Issue resolution guide |
+| [💻 IMPLEMENTATION](./IMPLEMENTATION.md) | Technical implementation details |
+| [🔐 SECURITY](./docs/SECURITY.md) | Security practices and guidelines |
 
 ---
 
