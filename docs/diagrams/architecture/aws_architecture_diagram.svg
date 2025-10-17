@@ -1,155 +1,156 @@
-<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 2000 1400" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
-  <rect width="1400" height="900" fill="#f8f9fa"/>
+  <rect width="2000" height="1400" fill="#f8f9fa"/>
   
   <!-- Title -->
-  <text x="700" y="40" font-size="28" font-weight="bold" text-anchor="middle" fill="#232F3E">
+  <text x="1000" y="60" font-size="42" font-weight="bold" text-anchor="middle" fill="#232F3E">
     AWS Infrastructure Architecture - Durga Puja Platform
   </text>
   
   <!-- Internet -->
-  <rect x="600" y="70" width="200" height="60" fill="#FF9900" stroke="#232F3E" stroke-width="2" rx="5"/>
-  <text x="700" y="105" font-size="18" font-weight="bold" text-anchor="middle" fill="white">🌐 Internet</text>
+  <rect x="850" y="100" width="300" height="90" fill="#FF9900" stroke="#232F3E" stroke-width="3" rx="8"/>
+  <text x="1000" y="155" font-size="28" font-weight="bold" text-anchor="middle" fill="white">🌐 Internet</text>
   
   <!-- Arrow -->
-  <line x1="700" y1="130" x2="700" y2="170" stroke="#232F3E" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1000" y1="190" x2="1000" y2="250" stroke="#232F3E" stroke-width="4" marker-end="url(#arrowhead)"/>
   
   <!-- AWS Cloud -->
-  <rect x="50" y="190" width="1300" height="680" fill="#F5F5F5" stroke="#FF9900" stroke-width="3" rx="10"/>
-  <text x="80" y="220" font-size="20" font-weight="bold" fill="#FF9900">AWS Cloud</text>
+  <rect x="50" y="270" width="1900" height="1050" fill="#F5F5F5" stroke="#FF9900" stroke-width="4" rx="12"/>
+  <text x="100" y="320" font-size="32" font-weight="bold" fill="#FF9900">AWS Cloud</text>
   
   <!-- VPC -->
-  <rect x="80" y="240" width="1240" height="610" fill="white" stroke="#3B48CC" stroke-width="2" rx="8"/>
-  <text x="110" y="270" font-size="18" font-weight="bold" fill="#3B48CC">VPC (10.0.0.0/16)</text>
+  <rect x="100" y="360" width="1800" height="920" fill="white" stroke="#3B48CC" stroke-width="3" rx="10"/>
+  <text x="140" y="410" font-size="28" font-weight="bold" fill="#3B48CC">VPC (10.0.0.0/16)</text>
   
   <!-- Application Load Balancer -->
-  <rect x="550" y="190" width="300" height="80" fill="#8C4FFF" stroke="#232F3E" stroke-width="2" rx="5"/>
-  <text x="700" y="220" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Application Load Balancer</text>
-  <text x="700" y="245" font-size="13" text-anchor="middle" fill="white">Multi-AZ | Auto-scaling</text>
+  <rect x="750" y="270" width="500" height="120" fill="#8C4FFF" stroke="#232F3E" stroke-width="3" rx="8"/>
+  <text x="1000" y="320" font-size="24" font-weight="bold" text-anchor="middle" fill="white">Application Load Balancer</text>
+  <text x="1000" y="355" font-size="18" text-anchor="middle" fill="white">Multi-AZ | Auto-scaling | SSL Termination</text>
   
   <!-- Availability Zones -->
   <!-- AZ-1 -->
-  <rect x="100" y="300" width="360" height="520" fill="#E8F4F8" stroke="#0073BB" stroke-width="2" rx="5"/>
-  <text x="120" y="330" font-size="16" font-weight="bold" fill="#0073BB">AZ us-east-1a</text>
+  <rect x="130" y="450" width="540" height="800" fill="#E8F4F8" stroke="#0073BB" stroke-width="3" rx="8"/>
+  <text x="160" y="500" font-size="24" font-weight="bold" fill="#0073BB">AZ us-east-1a</text>
   
   <!-- AZ-2 -->
-  <rect x="490" y="300" width="360" height="520" fill="#E8F4F8" stroke="#0073BB" stroke-width="2" rx="5"/>
-  <text x="510" y="330" font-size="16" font-weight="bold" fill="#0073BB">AZ us-east-1b</text>
+  <rect x="730" y="450" width="540" height="800" fill="#E8F4F8" stroke="#0073BB" stroke-width="3" rx="8"/>
+  <text x="760" y="500" font-size="24" font-weight="bold" fill="#0073BB">AZ us-east-1b</text>
   
   <!-- AZ-3 -->
-  <rect x="880" y="300" width="360" height="520" fill="#E8F4F8" stroke="#0073BB" stroke-width="2" rx="5"/>
-  <text x="900" y="330" font-size="16" font-weight="bold" fill="#0073BB">AZ us-east-1c</text>
+  <rect x="1330" y="450" width="540" height="800" fill="#E8F4F8" stroke="#0073BB" stroke-width="3" rx="8"/>
+  <text x="1360" y="500" font-size="24" font-weight="bold" fill="#0073BB">AZ us-east-1c</text>
   
   <!-- Public Subnets -->
-  <rect x="120" y="350" width="320" height="80" fill="#7AA116" stroke="#232F3E" stroke-width="1.5" rx="4"/>
-  <text x="280" y="380" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Public Subnet</text>
-  <text x="280" y="405" font-size="11" text-anchor="middle" fill="white">10.0.1.0/24 | NAT Gateway</text>
+  <rect x="160" y="530" width="480" height="120" fill="#7AA116" stroke="#232F3E" stroke-width="2" rx="6"/>
+  <text x="400" y="575" font-size="20" font-weight="bold" text-anchor="middle" fill="white">Public Subnet</text>
+  <text x="400" y="610" font-size="16" text-anchor="middle" fill="white">10.0.1.0/24 | NAT Gateway</text>
+  <text x="400" y="635" font-size="14" text-anchor="middle" fill="white">Internet Gateway Attached</text>
   
-  <rect x="510" y="350" width="320" height="80" fill="#7AA116" stroke="#232F3E" stroke-width="1.5" rx="4"/>
-  <text x="670" y="380" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Public Subnet</text>
-  <text x="670" y="405" font-size="11" text-anchor="middle" fill="white">10.0.2.0/24 | NAT Gateway</text>
+  <rect x="760" y="530" width="480" height="120" fill="#7AA116" stroke="#232F3E" stroke-width="2" rx="6"/>
+  <text x="1000" y="575" font-size="20" font-weight="bold" text-anchor="middle" fill="white">Public Subnet</text>
+  <text x="1000" y="610" font-size="16" text-anchor="middle" fill="white">10.0.2.0/24 | NAT Gateway</text>
   
-  <rect x="900" y="350" width="320" height="80" fill="#7AA116" stroke="#232F3E" stroke-width="1.5" rx="4"/>
-  <text x="1060" y="380" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Public Subnet</text>
-  <text x="1060" y="405" font-size="11" text-anchor="middle" fill="white">10.0.3.0/24 | NAT Gateway</text>
+  <rect x="1360" y="530" width="480" height="120" fill="#7AA116" stroke="#232F3E" stroke-width="2" rx="6"/>
+  <text x="1600" y="575" font-size="20" font-weight="bold" text-anchor="middle" fill="white">Public Subnet</text>
+  <text x="1600" y="610" font-size="16" text-anchor="middle" fill="white">10.0.3.0/24 | NAT Gateway</text>
   
   <!-- Private Subnets - App Tier -->
-  <rect x="120" y="450" width="320" height="140" fill="#3B48CC" stroke="#232F3E" stroke-width="1.5" rx="4"/>
-  <text x="280" y="475" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Private Subnet (App)</text>
-  <text x="280" y="495" font-size="11" text-anchor="middle" fill="white">10.0.11.0/24</text>
+  <rect x="160" y="680" width="480" height="240" fill="#3B48CC" stroke="#232F3E" stroke-width="2" rx="6"/>
+  <text x="400" y="720" font-size="20" font-weight="bold" text-anchor="middle" fill="white">Private Subnet (App)</text>
+  <text x="400" y="750" font-size="16" text-anchor="middle" fill="white">10.0.11.0/24</text>
   
-  <!-- EKS Pods in AZ1 -->
-  <rect x="140" y="510" width="130" height="60" fill="#FF9900" stroke="#232F3E" stroke-width="1" rx="3"/>
-  <text x="205" y="535" font-size="12" font-weight="bold" text-anchor="middle" fill="white">EKS Node</text>
-  <text x="205" y="555" font-size="10" text-anchor="middle" fill="white">Frontend Pods</text>
+  <!-- EKS Nodes in AZ1 -->
+  <rect x="190" y="780" width="190" height="100" fill="#FF9900" stroke="#232F3E" stroke-width="2" rx="5"/>
+  <text x="285" y="820" font-size="18" font-weight="bold" text-anchor="middle" fill="white">EKS Node</text>
+  <text x="285" y="850" font-size="14" text-anchor="middle" fill="white">Frontend Pods</text>
+  <text x="285" y="870" font-size="12" text-anchor="middle" fill="white">t3.medium</text>
   
-  <rect x="290" y="510" width="130" height="60" fill="#FF9900" stroke="#232F3E" stroke-width="1" rx="3"/>
-  <text x="355" y="535" font-size="12" font-weight="bold" text-anchor="middle" fill="white">EKS Node</text>
-  <text x="355" y="555" font-size="10" text-anchor="middle" fill="white">Backend Pods</text>
+  <rect x="410" y="780" width="190" height="100" fill="#FF9900" stroke="#232F3E" stroke-width="2" rx="5"/>
+  <text x="505" y="820" font-size="18" font-weight="bold" text-anchor="middle" fill="white">EKS Node</text>
+  <text x="505" y="850" font-size="14" text-anchor="middle" fill="white">Backend Pods</text>
+  <text x="505" y="870" font-size="12" text-anchor="middle" fill="white">t3.medium</text>
   
-  <rect x="510" y="450" width="320" height="140" fill="#3B48CC" stroke="#232F3E" stroke-width="1.5" rx="4"/>
-  <text x="670" y="475" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Private Subnet (App)</text>
-  <text x="670" y="495" font-size="11" text-anchor="middle" fill="white">10.0.12.0/24</text>
+  <rect x="760" y="680" width="480" height="240" fill="#3B48CC" stroke="#232F3E" stroke-width="2" rx="6"/>
+  <text x="1000" y="720" font-size="20" font-weight="bold" text-anchor="middle" fill="white">Private Subnet (App)</text>
+  <text x="1000" y="750" font-size="16" text-anchor="middle" fill="white">10.0.12.0/24</text>
   
-  <!-- EKS Pods in AZ2 -->
-  <rect x="530" y="510" width="130" height="60" fill="#FF9900" stroke="#232F3E" stroke-width="1" rx="3"/>
-  <text x="595" y="535" font-size="12" font-weight="bold" text-anchor="middle" fill="white">EKS Node</text>
-  <text x="595" y="555" font-size="10" text-anchor="middle" fill="white">Frontend Pods</text>
+  <!-- EKS Nodes in AZ2 -->
+  <rect x="790" y="780" width="190" height="100" fill="#FF9900" stroke="#232F3E" stroke-width="2" rx="5"/>
+  <text x="885" y="820" font-size="18" font-weight="bold" text-anchor="middle" fill="white">EKS Node</text>
+  <text x="885" y="850" font-size="14" text-anchor="middle" fill="white">Frontend Pods</text>
   
-  <rect x="680" y="510" width="130" height="60" fill="#FF9900" stroke="#232F3E" stroke-width="1" rx="3"/>
-  <text x="745" y="535" font-size="12" font-weight="bold" text-anchor="middle" fill="white">EKS Node</text>
-  <text x="745" y="555" font-size="10" text-anchor="middle" fill="white">Backend Pods</text>
+  <rect x="1010" y="780" width="190" height="100" fill="#FF9900" stroke="#232F3E" stroke-width="2" rx="5"/>
+  <text x="1105" y="820" font-size="18" font-weight="bold" text-anchor="middle" fill="white">EKS Node</text>
+  <text x="1105" y="850" font-size="14" text-anchor="middle" fill="white">Backend Pods</text>
   
-  <rect x="900" y="450" width="320" height="140" fill="#3B48CC" stroke="#232F3E" stroke-width="1.5" rx="4"/>
-  <text x="1060" y="475" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Private Subnet (App)</text>
-  <text x="1060" y="495" font-size="11" text-anchor="middle" fill="white">10.0.13.0/24</text>
+  <rect x="1360" y="680" width="480" height="240" fill="#3B48CC" stroke="#232F3E" stroke-width="2" rx="6"/>
+  <text x="1600" y="720" font-size="20" font-weight="bold" text-anchor="middle" fill="white">Private Subnet (App)</text>
+  <text x="1600" y="750" font-size="16" text-anchor="middle" fill="white">10.0.13.0/24</text>
   
-  <!-- EKS Pods in AZ3 -->
-  <rect x="920" y="510" width="130" height="60" fill="#FF9900" stroke="#232F3E" stroke-width="1" rx="3"/>
-  <text x="985" y="535" font-size="12" font-weight="bold" text-anchor="middle" fill="white">EKS Node</text>
-  <text x="985" y="555" font-size="10" text-anchor="middle" fill="white">Monitoring</text>
+  <!-- EKS Nodes in AZ3 -->
+  <rect x="1390" y="780" width="190" height="100" fill="#FF9900" stroke="#232F3E" stroke-width="2" rx="5"/>
+  <text x="1485" y="820" font-size="18" font-weight="bold" text-anchor="middle" fill="white">EKS Node</text>
+  <text x="1485" y="850" font-size="14" text-anchor="middle" fill="white">Monitoring</text>
   
-  <rect x="1070" y="510" width="130" height="60" fill="#FF9900" stroke="#232F3E" stroke-width="1" rx="3"/>
-  <text x="1135" y="535" font-size="12" font-weight="bold" text-anchor="middle" fill="white">EKS Node</text>
-  <text x="1135" y="555" font-size="10" text-anchor="middle" fill="white">ArgoCD</text>
+  <rect x="1610" y="780" width="190" height="100" fill="#FF9900" stroke="#232F3E" stroke-width="2" rx="5"/>
+  <text x="1705" y="820" font-size="18" font-weight="bold" text-anchor="middle" fill="white">EKS Node</text>
+  <text x="1705" y="850" font-size="14" text-anchor="middle" fill="white">ArgoCD</text>
   
   <!-- Private Subnets - Data Tier -->
-  <rect x="120" y="610" width="320" height="190" fill="#527FFF" stroke="#232F3E" stroke-width="1.5" rx="4"/>
-  <text x="280" y="635" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Private Subnet (Data)</text>
-  <text x="280" y="655" font-size="11" text-anchor="middle" fill="white">10.0.21.0/24</text>
+  <rect x="160" y="950" width="480" height="270" fill="#527FFF" stroke="#232F3E" stroke-width="2" rx="6"/>
+  <text x="400" y="990" font-size="20" font-weight="bold" text-anchor="middle" fill="white">Private Subnet (Data)</text>
+  <text x="400" y="1020" font-size="16" text-anchor="middle" fill="white">10.0.21.0/24</text>
   
   <!-- RDS Primary -->
-  <rect x="140" y="670" width="280" height="70" fill="#3B48CC" stroke="white" stroke-width="2" rx="3"/>
-  <text x="280" y="695" font-size="13" font-weight="bold" text-anchor="middle" fill="white">🗄️ RDS PostgreSQL</text>
-  <text x="280" y="715" font-size="11" text-anchor="middle" fill="white">Primary (db.t3.micro)</text>
-  <text x="280" y="730" font-size="10" text-anchor="middle" fill="#B0E0E6">Multi-AZ | Encrypted</text>
+  <rect x="190" y="1050" width="420" height="130" fill="#3B48CC" stroke="white" stroke-width="3" rx="5"/>
+  <text x="400" y="1095" font-size="20" font-weight="bold" text-anchor="middle" fill="white">🗄️ RDS PostgreSQL</text>
+  <text x="400" y="1130" font-size="16" text-anchor="middle" fill="white">Primary (db.t3.micro)</text>
+  <text x="400" y="1160" font-size="14" text-anchor="middle" fill="#B0E0E6">Multi-AZ | Encrypted | Auto-Backup</text>
   
-  <rect x="510" y="610" width="320" height="190" fill="#527FFF" stroke="#232F3E" stroke-width="1.5" rx="4"/>
-  <text x="670" y="635" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Private Subnet (Data)</text>
-  <text x="670" y="655" font-size="11" text-anchor="middle" fill="white">10.0.22.0/24</text>
+  <rect x="760" y="950" width="480" height="270" fill="#527FFF" stroke="#232F3E" stroke-width="2" rx="6"/>
+  <text x="1000" y="990" font-size="20" font-weight="bold" text-anchor="middle" fill="white">Private Subnet (Data)</text>
+  <text x="1000" y="1020" font-size="16" text-anchor="middle" fill="white">10.0.22.0/24</text>
   
   <!-- RDS Standby -->
-  <rect x="530" y="670" width="280" height="70" fill="#527FFF" stroke="white" stroke-width="2" rx="3"/>
-  <text x="670" y="695" font-size="13" font-weight="bold" text-anchor="middle" fill="white">🗄️ RDS Standby</text>
-  <text x="670" y="715" font-size="11" text-anchor="middle" fill="white">Auto Failover</text>
-  <text x="670" y="730" font-size="10" text-anchor="middle" fill="#B0E0E6">Sync Replication</text>
+  <rect x="790" y="1050" width="420" height="70" fill="#527FFF" stroke="white" stroke-width="3" rx="5"/>
+  <text x="1000" y="1090" font-size="18" font-weight="bold" text-anchor="middle" fill="white">🗄️ RDS Standby - Auto Failover</text>
   
   <!-- ElastiCache -->
-  <rect x="530" y="750" width="280" height="40" fill="#C925D1" stroke="white" stroke-width="2" rx="3"/>
-  <text x="670" y="775" font-size="12" font-weight="bold" text-anchor="middle" fill="white">⚡ ElastiCache Redis</text>
+  <rect x="790" y="1150" width="420" height="60" fill="#C925D1" stroke="white" stroke-width="3" rx="5"/>
+  <text x="1000" y="1190" font-size="18" font-weight="bold" text-anchor="middle" fill="white">⚡ ElastiCache Redis (cache.t3.micro)</text>
   
-  <rect x="900" y="610" width="320" height="190" fill="#527FFF" stroke="#232F3E" stroke-width="1.5" rx="4"/>
-  <text x="1060" y="635" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Private Subnet (Data)</text>
-  <text x="1060" y="655" font-size="11" text-anchor="middle" fill="white">10.0.23.0/24</text>
+  <rect x="1360" y="950" width="480" height="270" fill="#527FFF" stroke="#232F3E" stroke-width="2" rx="6"/>
+  <text x="1600" y="990" font-size="20" font-weight="bold" text-anchor="middle" fill="white">Private Subnet (Data)</text>
+  <text x="1600" y="1020" font-size="16" text-anchor="middle" fill="white">10.0.23.0/24</text>
   
   <!-- S3 -->
-  <rect x="920" y="670" width="280" height="120" fill="#569A31" stroke="white" stroke-width="2" rx="3"/>
-  <text x="1060" y="710" font-size="13" font-weight="bold" text-anchor="middle" fill="white">🪣 S3 Bucket</text>
-  <text x="1060" y="730" font-size="11" text-anchor="middle" fill="white">Static Assets</text>
-  <text x="1060" y="750" font-size="10" text-anchor="middle" fill="white">Versioned | Encrypted</text>
-  <text x="1060" y="770" font-size="10" text-anchor="middle" fill="white">Lifecycle Policies</text>
+  <rect x="1390" y="1050" width="420" height="160" fill="#569A31" stroke="white" stroke-width="3" rx="5"/>
+  <text x="1600" y="1100" font-size="20" font-weight="bold" text-anchor="middle" fill="white">🪣 S3 Bucket</text>
+  <text x="1600" y="1135" font-size="16" text-anchor="middle" fill="white">Static Assets & Uploads</text>
+  <text x="1600" y="1165" font-size="14" text-anchor="middle" fill="white">Versioned | Encrypted</text>
+  <text x="1600" y="1190" font-size="14" text-anchor="middle" fill="white">Lifecycle Policies</text>
   
   <!-- Legend -->
-  <rect x="100" y="860" width="1200" height="2" fill="#ccc"/>
+  <rect x="130" y="1310" width="1740" height="3" fill="#ccc"/>
   
-  <rect x="120" y="870" width="20" height="15" fill="#7AA116"/>
-  <text x="150" y="882" font-size="11" fill="#333">Public Subnet</text>
+  <rect x="200" y="1330" width="35" height="25" fill="#7AA116"/>
+  <text x="250" y="1350" font-size="16" fill="#333">Public Subnet</text>
   
-  <rect x="280" y="870" width="20" height="15" fill="#3B48CC"/>
-  <text x="310" y="882" font-size="11" fill="#333">Private App Subnet</text>
+  <rect x="450" y="1330" width="35" height="25" fill="#3B48CC"/>
+  <text x="500" y="1350" font-size="16" fill="#333">Private App Subnet</text>
   
-  <rect x="480" y="870" width="20" height="15" fill="#527FFF"/>
-  <text x="510" y="882" font-size="11" fill="#333">Private Data Subnet</text>
+  <rect x="750" y="1330" width="35" height="25" fill="#527FFF"/>
+  <text x="800" y="1350" font-size="16" fill="#333">Private Data Subnet</text>
   
-  <rect x="680" y="870" width="20" height="15" fill="#FF9900"/>
-  <text x="710" y="882" font-size="11" fill="#333">EKS Nodes</text>
+  <rect x="1050" y="1330" width="35" height="25" fill="#FF9900"/>
+  <text x="1100" y="1350" font-size="16" fill="#333">EKS Nodes</text>
   
-  <text x="850" y="882" font-size="11" font-weight="bold" fill="#232F3E">🔒 Security: Private subnets | Security Groups | Network ACLs | Encryption</text>
+  <text x="1400" y="1350" font-size="16" font-weight="bold" fill="#232F3E">🔒 High Availability: Multi-AZ | Auto-scaling | Encrypted | Private Subnets</text>
   
   <!-- Arrow marker definition -->
   <defs>
-    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-      <polygon points="0 0, 10 3, 0 6" fill="#232F3E"/>
+    <marker id="arrowhead" markerWidth="15" markerHeight="15" refX="12" refY="4.5" orient="auto">
+      <polygon points="0 0, 15 4.5, 0 9" fill="#232F3E"/>
     </marker>
   </defs>
 </svg>
