@@ -1,0 +1,215 @@
+<svg viewBox="0 0 1400 1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1400" height="1000" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="700" y="40" font-size="28" font-weight="bold" text-anchor="middle" fill="#232F3E">
+    CI/CD Pipeline - GitHub Actions → Docker Hub → ArgoCD → Kubernetes
+  </text>
+  
+  <!-- Stage 1: Source Control -->
+  <rect x="50" y="80" width="280" height="180" fill="#24292e" stroke="#333" stroke-width="2" rx="8"/>
+  <text x="190" y="110" font-size="18" font-weight="bold" text-anchor="middle" fill="white">📦 Stage 1: Source</text>
+  
+  <circle cx="190" cy="150" r="40" fill="#6e5494"/>
+  <text x="190" y="160" font-size="24" text-anchor="middle" fill="white">GH</text>
+  
+  <text x="190" y="210" font-size="13" text-anchor="middle" fill="white">Developer pushes code</text>
+  <text x="190" y="230" font-size="13" text-anchor="middle" fill="white">to main branch</text>
+  <text x="190" y="250" font-size="11" text-anchor="middle" fill="#87CEEB">Trigger: Git Push</text>
+  
+  <!-- Arrow -->
+  <line x1="330" y1="170" x2="390" y2="170" stroke="#4CAF50" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="360" y="160" font-size="11" fill="#4CAF50" font-weight="bold">Webhook</text>
+  
+  <!-- Stage 2: Build & Test -->
+  <rect x="390" y="80" width="280" height="360" fill="#2088FF" stroke="#0366d6" stroke-width="2" rx="8"/>
+  <text x="530" y="110" font-size="18" font-weight="bold" text-anchor="middle" fill="white">⚙️ Stage 2: Build & Test</text>
+  
+  <!-- GitHub Actions Logo -->
+  <circle cx="530" cy="150" r="35" fill="white"/>
+  <text x="530" y="160" font-size="20" text-anchor="middle">🔧</text>
+  
+  <text x="530" y="200" font-size="13" font-weight="bold" text-anchor="middle" fill="white">GitHub Actions</text>
+  
+  <!-- Build Steps -->
+  <rect x="410" y="220" width="240" height="40" fill="#34495e" stroke="white" stroke-width="1" rx="4"/>
+  <text x="530" y="245" font-size="12" text-anchor="middle" fill="white">✓ Lint & Code Quality</text>
+  
+  <rect x="410" y="270" width="240" height="40" fill="#34495e" stroke="white" stroke-width="1" rx="4"/>
+  <text x="530" y="295" font-size="12" text-anchor="middle" fill="white">✓ Run Tests (Jest)</text>
+  
+  <rect x="410" y="320" width="240" height="40" fill="#34495e" stroke="white" stroke-width="1" rx="4"/>
+  <text x="530" y="345" font-size="12" text-anchor="middle" fill="white">✓ Security Scan (npm audit)</text>
+  
+  <rect x="410" y="370" width="240" height="40" fill="#34495e" stroke="white" stroke-width="1" rx="4"/>
+  <text x="530" y="395" font-size="12" text-anchor="middle" fill="white">✓ Build Docker Images</text>
+  
+  <text x="530" y="430" font-size="10" text-anchor="middle" fill="#FFD700">Duration: ~3-5 minutes</text>
+  
+  <!-- Arrow -->
+  <line x1="670" y1="260" x2="730" y2="260" stroke="#4CAF50" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="700" y="250" font-size="11" fill="#4CAF50" font-weight="bold">Push</text>
+  
+  <!-- Stage 3: Container Registry -->
+  <rect x="730" y="80" width="280" height="360" fill="#0db7ed" stroke="#0077B5" stroke-width="2" rx="8"/>
+  <text x="870" y="110" font-size="18" font-weight="bold" text-anchor="middle" fill="white">🐳 Stage 3: Registry</text>
+  
+  <circle cx="870" cy="160" r="40" fill="#2496ED"/>
+  <text x="870" y="170" font-size="24" text-anchor="middle" fill="white">🐋</text>
+  
+  <text x="870" y="215" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Docker Hub</text>
+  
+  <!-- Images -->
+  <rect x="750" y="240" width="240" height="50" fill="#1e3a5f" stroke="white" stroke-width="1" rx="4"/>
+  <text x="870" y="260" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Frontend Image</text>
+  <text x="870" y="278" font-size="10" text-anchor="middle" fill="#87CEEB">user/frontend:git-sha</text>
+  
+  <rect x="750" y="300" width="240" height="50" fill="#1e3a5f" stroke="white" stroke-width="1" rx="4"/>
+  <text x="870" y="320" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Backend Image</text>
+  <text x="870" y="338" font-size="10" text-anchor="middle" fill="#87CEEB">user/backend:git-sha</text>
+  
+  <rect x="750" y="360" width="240" height="50" fill="#1e3a5f" stroke="white" stroke-width="1" rx="4"/>
+  <text x="870" y="380" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Tagged: latest</text>
+  <text x="870" y="398" font-size="10" text-anchor="middle" fill="#FFD700">Multi-stage optimized</text>
+  
+  <text x="870" y="430" font-size="10" text-anchor="middle" fill="#FFD700">Size: ~150MB each</text>
+  
+  <!-- Arrow down -->
+  <line x1="870" y1="440" x2="870" y2="480" stroke="#4CAF50" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="895" y="465" font-size="11" fill="#4CAF50" font-weight="bold">Pull</text>
+  
+  <!-- Stage 4: GitOps -->
+  <rect x="730" y="480" width="280" height="200" fill="#EF7B4D" stroke="#d35400" stroke-width="2" rx="8"/>
+  <text x="870" y="510" font-size="18" font-weight="bold" text-anchor="middle" fill="white">🔄 Stage 4: GitOps</text>
+  
+  <circle cx="870" cy="555" r="35" fill="white"/>
+  <text x="870" y="565" font-size="20" text-anchor="middle">🦑</text>
+  
+  <text x="870" y="605" font-size="14" font-weight="bold" text-anchor="middle" fill="white">ArgoCD</text>
+  
+  <rect x="750" y="620" width="240" height="30" fill="#34495e" stroke="white" stroke-width="1" rx="4"/>
+  <text x="870" y="640" font-size="11" text-anchor="middle" fill="white">✓ Detect Image Change</text>
+  
+  <rect x="750" y="655" width="240" height="30" fill="#34495e" stroke="white" stroke-width="1" rx="4"/>
+  <text x="870" y="675" font-size="11" text-anchor="middle" fill="white">✓ Sync with K8s Manifests</text>
+  
+  <!-- Arrow left -->
+  <line x1="730" y1="580" x2="670" y2="580" stroke="#4CAF50" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="700" y="570" font-size="11" fill="#4CAF50" font-weight="bold">Deploy</text>
+  
+  <!-- Stage 5: Kubernetes -->
+  <rect x="390" y="480" width="280" height="380" fill="#326CE5" stroke="#1a4a8f" stroke-width="2" rx="8"/>
+  <text x="530" y="510" font-size="18" font-weight="bold" text-anchor="middle" fill="white">☸️ Stage 5: Orchestration</text>
+  
+  <circle cx="530" cy="555" r="35" fill="white"/>
+  <text x="530" y="565" font-size="20" text-anchor="middle">⎈</text>
+  
+  <text x="530" y="605" font-size="14" font-weight="bold" text-anchor="middle" fill="white">EKS Cluster</text>
+  
+  <!-- Deployment Process -->
+  <rect x="410" y="625" width="240" height="35" fill="#1e3a5f" stroke="white" stroke-width="1" rx="4"/>
+  <text x="530" y="648" font-size="11" text-anchor="middle" fill="white">Rolling Update Strategy</text>
+  
+  <rect x="410" y="670" width="115" height="60" fill="#4CAF50" stroke="white" stroke-width="1" rx="4"/>
+  <text x="467" y="695" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Frontend</text>
+  <text x="467" y="715" font-size="9" text-anchor="middle" fill="white">3-10 Pods</text>
+  
+  <rect x="535" y="670" width="115" height="60" fill="#4CAF50" stroke="white" stroke-width="1" rx="4"/>
+  <text x="592" y="695" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Backend</text>
+  <text x="592" y="715" font-size="9" text-anchor="middle" fill="white">3-10 Pods</text>
+  
+  <rect x="410" y="740" width="240" height="35" fill="#1e3a5f" stroke="white" stroke-width="1" rx="4"/>
+  <text x="530" y="763" font-size="11" text-anchor="middle" fill="white">Health Checks Pass ✓</text>
+  
+  <rect x="410" y="785" width="240" height="35" fill="#FFD700" stroke="white" stroke-width="1" rx="4"/>
+  <text x="530" y="808" font-size="11" font-weight="bold" text-anchor="middle" fill="#333">Zero Downtime Deployment</text>
+  
+  <text x="530" y="840" font-size="10" text-anchor="middle" fill="#FFD700">Auto-scaling: HPA enabled</text>
+  
+  <!-- Arrow left -->
+  <line x1="390" y1="670" x2="330" y2="670" stroke="#4CAF50" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="360" y="660" font-size="11" fill="#4CAF50" font-weight="bold">Serve</text>
+  
+  <!-- Stage 6: Users -->
+  <rect x="50" y="480" width="280" height="380" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="8"/>
+  <text x="190" y="510" font-size="18" font-weight="bold" text-anchor="middle" fill="white">🌐 Stage 6: Production</text>
+  
+  <circle cx="190" cy="560" r="40" fill="#3498db"/>
+  <text x="190" y="575" font-size="28" text-anchor="middle" fill="white">⚡</text>
+  
+  <text x="190" y="620" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Application Load Balancer</text>
+  
+  <!-- Traffic Flow -->
+  <rect x="70" y="650" width="240" height="35" fill="#34495e" stroke="white" stroke-width="1" rx="4"/>
+  <text x="190" y="673" font-size="11" text-anchor="middle" fill="white">SSL Termination (443)</text>
+  
+  <rect x="70" y="695" width="240" height="35" fill="#34495e" stroke="white" stroke-width="1" rx="4"/>
+  <text x="190" y="718" font-size="11" text-anchor="middle" fill="white">Health Checks Active</text>
+  
+  <rect x="70" y="740" width="240" height="35" fill="#34495e" stroke="white" stroke-width="1" rx="4"/>
+  <text x="190" y="763" font-size="11" text-anchor="middle" fill="white">Multi-AZ Distribution</text>
+  
+  <rect x="70" y="785" width="240" height="35" fill="#2ecc71" stroke="white" stroke-width="1" rx="4"/>
+  <text x="190" y="808" font-size="12" font-weight="bold" text-anchor="middle" fill="white">✓ Live in Production</text>
+  
+  <text x="190" y="840" font-size="10" text-anchor="middle" fill="#FFD700">Response Time: &lt;200ms</text>
+  
+  <!-- Monitoring Section -->
+  <rect x="1050" y="80" width="300" height="280" fill="#9B59B6" stroke="#7D3C98" stroke-width="2" rx="8"/>
+  <text x="1200" y="110" font-size="18" font-weight="bold" text-anchor="middle" fill="white">📊 Monitoring</text>
+  
+  <rect x="1070" y="130" width="260" height="60" fill="#34495e" stroke="white" stroke-width="1" rx="4"/>
+  <text x="1200" y="155" font-size="13" font-weight="bold" text-anchor="middle" fill="white">Prometheus</text>
+  <text x="1200" y="175" font-size="10" text-anchor="middle" fill="#87CEEB">Metrics Collection</text>
+  
+  <rect x="1070" y="200" width="260" height="60" fill="#34495e" stroke="white" stroke-width="1" rx="4"/>
+  <text x="1200" y="225" font-size="13" font-weight="bold" text-anchor="middle" fill="white">Grafana</text>
+  <text x="1200" y="245" font-size="10" text-anchor="middle" fill="#87CEEB">Dashboards & Alerts</text>
+  
+  <rect x="1070" y="270" width="260" height="60" fill="#34495e" stroke="white" stroke-width="1" rx="4"/>
+  <text x="1200" y="295" font-size="13" font-weight="bold" text-anchor="middle" fill="white">CloudWatch</text>
+  <text x="1200" y="315" font-size="10" text-anchor="middle" fill="#87CEEB">AWS Logs & Metrics</text>
+  
+  <text x="1200" y="350" font-size="10" text-anchor="middle" fill="#FFD700">Real-time observability</text>
+  
+  <!-- Security Section -->
+  <rect x="1050" y="390" width="300" height="230" fill="#e67e22" stroke="#d35400" stroke-width="2" rx="8"/>
+  <text x="1200" y="420" font-size="18" font-weight="bold" text-anchor="middle" fill="white">🔒 Security</text>
+  
+  <rect x="1070" y="440" width="260" height="40" fill="#34495e" stroke="white" stroke-width="1" rx="4"/>
+  <text x="1200" y="465" font-size="11" text-anchor="middle" fill="white">✓ npm audit (vulnerabilities)</text>
+  
+  <rect x="1070" y="490" width="260" height="40" fill="#34495e" stroke="white" stroke-width="1" rx="4"/>
+  <text x="1200" y="515" font-size="11" text-anchor="middle" fill="white">✓ Image scanning</text>
+  
+  <rect x="1070" y="540" width="260" height="40" fill="#34495e" stroke="white" stroke-width="1" rx="4"/>
+  <text x="1200" y="565" font-size="11" text-anchor="middle" fill="white">✓ HTTPS/TLS encryption</text>
+  
+  <text x="1200" y="600" font-size="10" text-anchor="middle" fill="#FFD700">Private subnets | IAM roles</text>
+  
+  <!-- Timeline -->
+  <rect x="50" y="900" width="1300" height="80" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2" rx="8"/>
+  <text x="700" y="925" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">⏱️ Pipeline Timeline</text>
+  
+  <text x="150" y="955" font-size="12" text-anchor="middle" fill="#2c3e50">Commit</text>
+  <text x="150" y="970" font-size="10" text-anchor="middle" fill="#7f8c8d">0 min</text>
+  
+  <text x="400" y="955" font-size="12" text-anchor="middle" fill="#2c3e50">Build & Test</text>
+  <text x="400" y="970" font-size="10" text-anchor="middle" fill="#7f8c8d">3-5 min</text>
+  
+  <text x="650" y="955" font-size="12" text-anchor="middle" fill="#2c3e50">Push Images</text>
+  <text x="650" y="970" font-size="10" text-anchor="middle" fill="#7f8c8d">6-7 min</text>
+  
+  <text x="900" y="955" font-size="12" text-anchor="middle" fill="#2c3e50">ArgoCD Sync</text>
+  <text x="900" y="970" font-size="10" text-anchor="middle" fill="#7f8c8d">8-9 min</text>
+  
+  <text x="1150" y="955" font-size="12" text-anchor="middle" fill="#2c3e50">Live</text>
+  <text x="1150" y="970" font-size="10" text-anchor="middle" fill="#27ae60">10 min</text>
+  
+  <!-- Arrow definition -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#4CAF50"/>
+    </marker>
+  </defs>
