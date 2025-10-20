@@ -1838,7 +1838,7 @@ If you discover a security vulnerability in this project, please follow responsi
 #### How to Report
 
 1. **DO NOT** open a public GitHub issue
-2. **DO** email security concerns to: security@durgapuja-project.com (or your.email@example.com)
+2. **DO** email security concerns to: shubhadeep010@gmail.com
 3. Include:
    - Description of the vulnerability
    - Steps to reproduce
@@ -1867,7 +1867,7 @@ Response Timeline:
 
 #### Hall of Fame
 
-We maintain a security hall of fame for responsible disclosure:
+We will maintain a security hall of fame for responsible disclosure:
 - [Security Researchers](https://github.com/SHUBHADEEPXT/Durga-Puja_Website_Project/security/hall-of-fame)
 
 ---
@@ -1893,7 +1893,7 @@ We maintain a security hall of fame for responsible disclosure:
 ## 🔒 Security Contacts
 
 **Security Team**
-- Email: security@durgapuja-project.com
+- Email: shubhadeep010@gmail.com
 - PGP Key: [Available on request]
 - Response Time: 24 - 48 hours
 
