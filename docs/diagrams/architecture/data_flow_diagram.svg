@@ -1,0 +1,159 @@
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="700" y="40" font-size="28" font-weight="bold" text-anchor="middle" fill="#232F3E">
+    Data Flow Architecture - User Request to Response
+  </text>
+  
+  <!-- User -->
+  <circle cx="700" cy="120" r="50" fill="#3498db" stroke="#2C3E50" stroke-width="3"/>
+  <text x="700" y="130" font-size="30" text-anchor="middle" fill="white">👤</text>
+  <text x="700" y="190" font-size="14" font-weight="bold" text-anchor="middle" fill="#2C3E50">User Browser</text>
+  
+  <!-- Arrow 1 -->
+  <line x1="700" y1="190" x2="700" y2="240" stroke="#e74c3c" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="750" y="220" font-size="11" font-weight="bold" fill="#e74c3c">HTTPS Request</text>
+  
+  <!-- ALB -->
+  <rect x="550" y="240" width="300" height="80" fill="#8C4FFF" stroke="#2C3E50" stroke-width="3" rx="8"/>
+  <text x="700" y="270" font-size="18" font-weight="bold" text-anchor="middle" fill="white">⚡ Application Load Balancer</text>
+  <text x="700" y="295" font-size="12" text-anchor="middle" fill="white">SSL Termination | Port 443→80</text>
+  <text x="700" y="310" font-size="10" text-anchor="middle" fill="#FFD700">Multi-AZ | Health Checks</text>
+  
+  <!-- Split -->
+  <line x1="600" y1="320" x2="400" y2="370" stroke="#27ae60" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="480" y="350" font-size="10" font-weight="bold" fill="#27ae60">Static Assets</text>
+  
+  <line x1="800" y1="320" x2="1000" y2="370" stroke="#e74c3c" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="920" y="350" font-size="10" font-weight="bold" fill="#e74c3c">API Calls</text>
+  
+  <!-- Frontend -->
+  <rect x="250" y="370" width="300" height="100" fill="#4ECDC4" stroke="#2C3E50" stroke-width="3" rx="8"/>
+  <text x="400" y="400" font-size="18" font-weight="bold" text-anchor="middle" fill="white">🎨 Frontend Service</text>
+  <text x="400" y="425" font-size="13" text-anchor="middle" fill="white">React Application</text>
+  <text x="400" y="445" font-size="11" text-anchor="middle" fill="white">3-10 Pods | Port 80</text>
+  <text x="400" y="460" font-size="9" text-anchor="middle" fill="#2C3E50">Nginx serving static files</text>
+  
+  <!-- Backend -->
+  <rect x="850" y="370" width="300" height="100" fill="#F38181" stroke="#2C3E50" stroke-width="3" rx="8"/>
+  <text x="1000" y="400" font-size="18" font-weight="bold" text-anchor="middle" fill="white">⚙️ Backend Service</text>
+  <text x="1000" y="425" font-size="13" text-anchor="middle" fill="white">Node.js + Express API</text>
+  <text x="1000" y="445" font-size="11" text-anchor="middle" fill="white">3-10 Pods | Port 5000</text>
+  <text x="1000" y="460" font-size="9" text-anchor="middle" fill="#2C3E50">RESTful endpoints</text>
+  
+  <!-- Backend branches -->
+  <line x1="900" y1="470" x2="700" y2="530" stroke="#3498db" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="780" y="505" font-size="10" font-weight="bold" fill="#3498db">Cache Check</text>
+  
+  <line x1="1000" y1="470" x2="1000" y2="530" stroke="#9b59b6" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="1040" y="505" font-size="10" font-weight="bold" fill="#9b59b6">DB Query</text>
+  
+  <line x1="1100" y1="470" x2="1250" y2="530" stroke="#f39c12" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="1200" y="505" font-size="10" font-weight="bold" fill="#f39c12">File Upload</text>
+  
+  <!-- Redis -->
+  <rect x="550" y="530" width="300" height="90" fill="#C925D1" stroke="#2C3E50" stroke-width="3" rx="8"/>
+  <text x="700" y="560" font-size="18" font-weight="bold" text-anchor="middle" fill="white">⚡ ElastiCache Redis</text>
+  <text x="700" y="585" font-size="12" text-anchor="middle" fill="white">cache.t3.micro | Multi-AZ</text>
+  <text x="700" y="605" font-size="10" text-anchor="middle" fill="#FFD700">Session cache | API responses | Query cache</text>
+  
+  <!-- Cache flow -->
+  <line x1="750" y1="620" x2="900" y2="680" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <text x="810" y="655" font-size="9" fill="#27ae60">Cache Miss</text>
+  
+  <!-- RDS -->
+  <rect x="850" y="680" width="300" height="90" fill="#3B48CC" stroke="#2C3E50" stroke-width="3" rx="8"/>
+  <text x="1000" y="710" font-size="18" font-weight="bold" text-anchor="middle" fill="white">🗄️ RDS PostgreSQL</text>
+  <text x="1000" y="735" font-size="12" text-anchor="middle" fill="white">db.t3.micro | Multi-AZ</text>
+  <text x="1000" y="755" font-size="10" text-anchor="middle" fill="#FFD700">Primary + Standby | Encrypted | Auto Backup</text>
+  
+  <!-- S3 -->
+  <rect x="1200" y="530" width="150" height="240" fill="#569A31" stroke="#2C3E50" stroke-width="3" rx="8"/>
+  <text x="1275" y="560" font-size="16" font-weight="bold" text-anchor="middle" fill="white">🪣 S3</text>
+  <text x="1275" y="585" font-size="11" text-anchor="middle" fill="white">durga-puja-</text>
+  <text x="1275" y="600" font-size="11" text-anchor="middle" fill="white">assets</text>
+  
+  <!-- S3 folders -->
+  <rect x="1220" y="620" width="110" height="30" fill="#7AA116" stroke="white" stroke-width="1" rx="3"/>
+  <text x="1275" y="640" font-size="10" text-anchor="middle" fill="white">📁 /uploads</text>
+  
+  <rect x="1220" y="660" width="110" height="30" fill="#7AA116" stroke="white" stroke-width="1" rx="3"/>
+  <text x="1275" y="680" font-size="10" text-anchor="middle" fill="white">📁 /thumbnails</text>
+  
+  <rect x="1220" y="700" width="110" height="30" fill="#7AA116" stroke="white" stroke-width="1" rx="3"/>
+  <text x="1275" y="720" font-size="10" text-anchor="middle" fill="white">📁 /static</text>
+  
+  <text x="1275" y="755" font-size="9" text-anchor="middle" fill="white">Versioned</text>
+  <text x="1275" y="768" font-size="9" text-anchor="middle" fill="white">Encrypted</text>
+  
+  <!-- Data Tables -->
+  <rect x="50" y="680" width="600" height="180" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2" rx="8"/>
+  <text x="350" y="710" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">📊 Database Schema</text>
+  
+  <rect x="70" y="730" width="140" height="110" fill="#3498db" stroke="#2C3E50" stroke-width="1" rx="4"/>
+  <text x="140" y="750" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Users Table</text>
+  <text x="140" y="770" font-size="9" text-anchor="middle" fill="white">id, username</text>
+  <text x="140" y="785" font-size="9" text-anchor="middle" fill="white">email, password</text>
+  <text x="140" y="800" font-size="9" text-anchor="middle" fill="white">created_at</text>
+  <text x="140" y="815" font-size="9" text-anchor="middle" fill="white">updated_at</text>
+  
+  <rect x="230" y="730" width="140" height="110" fill="#e74c3c" stroke="#2C3E50" stroke-width="1" rx="4"/>
+  <text x="300" y="750" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Photos Table</text>
+  <text x="300" y="770" font-size="9" text-anchor="middle" fill="white">id, user_id</text>
+  <text x="300" y="785" font-size="9" text-anchor="middle" fill="white">title, description</text>
+  <text x="300" y="800" font-size="9" text-anchor="middle" fill="white">s3_url, thumbnail</text>
+  <text x="300" y="815" font-size="9" text-anchor="middle" fill="white">created_at</text>
+  
+  <rect x="390" y="730" width="140" height="110" fill="#f39c12" stroke="#2C3E50" stroke-width="1" rx="4"/>
+  <text x="460" y="750" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Pandals Table</text>
+  <text x="460" y="770" font-size="9" text-anchor="middle" fill="white">id, name</text>
+  <text x="460" y="785" font-size="9" text-anchor="middle" fill="white">location, address</text>
+  <text x="460" y="800" font-size="9" text-anchor="middle" fill="white">description</text>
+  <text x="460" y="815" font-size="9" text-anchor="middle" fill="white">rating, views</text>
+  
+  <rect x="550" y="730" width="80" height="60" fill="#9b59b6" stroke="#2C3E50" stroke-width="1" rx="4"/>
+  <text x="590" y="755" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Comments</text>
+  <text x="590" y="775" font-size="9" text-anchor="middle" fill="white">Votes</text>
+  
+  <!-- Response flow back -->
+  <line x1="1000" y1="680" x2="1000" y2="630" stroke="#27ae60" stroke-width="3" marker-end="url(#arrow2)"/>
+  <text x="1040" y="655" font-size="10" font-weight="bold" fill="#27ae60">Query Result</text>
+  
+  <line x1="1000" y1="530" x2="1000" y2="470" stroke="#27ae60" stroke-width="3" marker-end="url(#arrow2)"/>
+  <text x="1040" y="505" font-size="10" font-weight="bold" fill="#27ae60">JSON Response</text>
+  
+  <line x1="1000" y1="370" x2="700" y2="320" stroke="#27ae60" stroke-width="3" marker-end="url(#arrow2)"/>
+  <text x="850" y="350" font-size="10" font-weight="bold" fill="#27ae60">API Response</text>
+  
+  <line x1="700" y1="240" x2="700" y2="190" stroke="#27ae60" stroke-width="3" marker-end="url(#arrow2)"/>
+  <text x="640" y="220" font-size="11" font-weight="bold" fill="#27ae60">HTTPS Response</text>
+  
+  <!-- Data Flow Steps -->
+  <rect x="50" y="20" width="200" height="60" fill="#3498db" stroke="#2C3E50" stroke-width="2" rx="6"/>
+  <text x="150" y="45" font-size="12" font-weight="bold" text-anchor="middle" fill="white">📥 Request Flow</text>
+  <text x="150" y="65" font-size="9" text-anchor="middle" fill="white">User → ALB → Service → Backend</text>
+  
+  <rect x="1150" y="20" width="200" height="60" fill="#27ae60" stroke="#2C3E50" stroke-width="2" rx="6"/>
+  <text x="1250" y="45" font-size="12" font-weight="bold" text-anchor="middle" fill="white">📤 Response Flow</text>
+  <text x="1250" y="65" font-size="9" text-anchor="middle" fill="white">Backend → Service → ALB → User</text>
+  
+  <!-- Performance Metrics -->
+  <rect x="50" y="870" width="1300" height="2" fill="#ccc"/>
+  
+  <text x="150" y="890" font-size="11" font-weight="bold" fill="#2c3e50">⚡ Cache Hit Ratio: 85%</text>
+  <text x="400" y="890" font-size="11" font-weight="bold" fill="#2c3e50">🕒 Avg Response Time: &lt;200ms</text>
+  <text x="700" y="890" font-size="11" font-weight="bold" fill="#2c3e50">📊 Throughput: 100 req/sec</text>
+  <text x="1000" y="890" font-size="11" font-weight="bold" fill="#2c3e50">🔒 All data encrypted in transit & at rest</text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#e74c3c"/>
+    </marker>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#27ae60"/>
+    </marker>
+  </defs>
+</svg>
