@@ -1,0 +1,168 @@
+<svg viewBox="0 0 1400 1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1400" height="1000" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="700" y="40" font-size="28" font-weight="bold" text-anchor="middle" fill="#E6522C">
+    Monitoring & Observability Stack - Prometheus + Grafana
+  </text>
+  
+  <!-- Application Layer -->
+  <rect x="50" y="80" width="1300" height="200" fill="#E8F4F8" stroke="#0073BB" stroke-width="2" rx="8"/>
+  <text x="80" y="110" font-size="18" font-weight="bold" fill="#0073BB">🎯 Application Layer (Metrics Sources)</text>
+  
+  <!-- Frontend Pods -->
+  <rect x="80" y="130" width="250" height="120" fill="#4ECDC4" stroke="#2C3E50" stroke-width="2" rx="6"/>
+  <text x="205" y="155" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Frontend Pods</text>
+  <rect x="100" y="170" width="90" height="40" fill="#95E1D3" stroke="#2C3E50" stroke-width="1" rx="3"/>
+  <text x="145" y="195" font-size="10" text-anchor="middle" fill="#2C3E50">/metrics:80</text>
+  <rect x="210" y="170" width="90" height="40" fill="#95E1D3" stroke="#2C3E50" stroke-width="1" rx="3"/>
+  <text x="255" y="195" font-size="10" text-anchor="middle" fill="#2C3E50">/metrics:80</text>
+  <text x="205" y="235" font-size="9" text-anchor="middle" fill="#2C3E50">HTTP requests, errors, latency</text>
+  
+  <!-- Backend Pods -->
+  <rect x="360" y="130" width="250" height="120" fill="#F38181" stroke="#2C3E50" stroke-width="2" rx="6"/>
+  <text x="485" y="155" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Backend Pods</text>
+  <rect x="380" y="170" width="90" height="40" fill="#FFAAA5" stroke="#2C3E50" stroke-width="1" rx="3"/>
+  <text x="425" y="195" font-size="10" text-anchor="middle" fill="#2C3E50">/metrics:5000</text>
+  <rect x="490" y="170" width="90" height="40" fill="#FFAAA5" stroke="#2C3E50" stroke-width="1" rx="3"/>
+  <text x="535" y="195" font-size="10" text-anchor="middle" fill="#2C3E50">/metrics:5000</text>
+  <text x="485" y="235" font-size="9" text-anchor="middle" fill="#2C3E50">API calls, DB queries, cache hits</text>
+  
+  <!-- Node Metrics -->
+  <rect x="640" y="130" width="250" height="120" fill="#FFD93D" stroke="#2C3E50" stroke-width="2" rx="6"/>
+  <text x="765" y="155" font-size="14" font-weight="bold" text-anchor="middle" fill="#2C3E50">Node Exporter</text>
+  <rect x="660" y="170" width="90" height="40" fill="#F6C90E" stroke="#2C3E50" stroke-width="1" rx="3"/>
+  <text x="705" y="195" font-size="10" text-anchor="middle" fill="#2C3E50">Node 1</text>
+  <rect x="770" y="170" width="90" height="40" fill="#F6C90E" stroke="#2C3E50" stroke-width="1" rx="3"/>
+  <text x="815" y="195" font-size="10" text-anchor="middle" fill="#2C3E50">Node 2-5</text>
+  <text x="765" y="235" font-size="9" text-anchor="middle" fill="#2C3E50">CPU, Memory, Disk, Network</text>
+  
+  <!-- Kubernetes Metrics -->
+  <rect x="920" y="130" width="250" height="120" fill="#AA96DA" stroke="#2C3E50" stroke-width="2" rx="6"/>
+  <text x="1045" y="155" font-size="14" font-weight="bold" text-anchor="middle" fill="white">kube-state-metrics</text>
+  <rect x="940" y="170" width="90" height="40" fill="#FCBAD3" stroke="#2C3E50" stroke-width="1" rx="3"/>
+  <text x="985" y="195" font-size="10" text-anchor="middle" fill="#2C3E50">Cluster</text>
+  <rect x="1050" y="170" width="90" height="40" fill="#FCBAD3" stroke="#2C3E50" stroke-width="1" rx="3"/>
+  <text x="1095" y="195" font-size="10" text-anchor="middle" fill="#2C3E50">Resources</text>
+  <text x="1045" y="235" font-size="9" text-anchor="middle" fill="#2C3E50">Pods, Deployments, Services status</text>
+  
+  <!-- Scraping arrows -->
+  <line x1="205" y1="250" x2="205" y2="310" stroke="#E6522C" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="485" y1="250" x2="485" y2="310" stroke="#E6522C" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="765" y1="250" x2="765" y2="310" stroke="#E6522C" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="1045" y1="250" x2="1045" y2="310" stroke="#E6522C" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <text x="120" y="285" font-size="10" font-weight="bold" fill="#E6522C">Scrape</text>
+  <text x="400" y="285" font-size="10" font-weight="bold" fill="#E6522C">Scrape</text>
+  <text x="680" y="285" font-size="10" font-weight="bold" fill="#E6522C">Scrape</text>
+  <text x="960" y="285" font-size="10" font-weight="bold" fill="#E6522C">Scrape</text>
+  
+  <!-- Prometheus -->
+  <rect x="250" y="310" width="900" height="180" fill="#E6522C" stroke="#CC4A1F" stroke-width="3" rx="8"/>
+  <text x="700" y="345" font-size="22" font-weight="bold" text-anchor="middle" fill="white">📊 Prometheus Server</text>
+  <text x="700" y="368" font-size="12" text-anchor="middle" fill="white">Time-Series Database & Alerting Engine</text>
+  
+  <!-- Prometheus Components -->
+  <rect x="280" y="385" width="200" height="85" fill="#CC4A1F" stroke="white" stroke-width="2" rx="6"/>
+  <text x="380" y="410" font-size="13" font-weight="bold" text-anchor="middle" fill="white">🎯 Service Discovery</text>
+  <text x="380" y="430" font-size="10" text-anchor="middle" fill="white">Kubernetes API</text>
+  <text x="380" y="448" font-size="9" text-anchor="middle" fill="white">Auto-discover pods</text>
+  <text x="380" y="463" font-size="9" text-anchor="middle" fill="white">Label-based selection</text>
+  
+  <rect x="500" y="385" width="200" height="85" fill="#CC4A1F" stroke="white" stroke-width="2" rx="6"/>
+  <text x="600" y="410" font-size="13" font-weight="bold" text-anchor="middle" fill="white">💾 TSDB Storage</text>
+  <text x="600" y="430" font-size="10" text-anchor="middle" fill="white">50GB Persistent Volume</text>
+  <text x="600" y="448" font-size="9" text-anchor="middle" fill="white">15s scrape interval</text>
+  <text x="600" y="463" font-size="9" text-anchor="middle" fill="white">15 days retention</text>
+  
+  <rect x="720" y="385" width="200" height="85" fill="#CC4A1F" stroke="white" stroke-width="2" rx="6"/>
+  <text x="820" y="410" font-size="13" font-weight="bold" text-anchor="middle" fill="white">🔍 PromQL Engine</text>
+  <text x="820" y="430" font-size="10" text-anchor="middle" fill="white">Query Language</text>
+  <text x="820" y="448" font-size="9" text-anchor="middle" fill="white">Aggregations</text>
+  <text x="820" y="463" font-size="9" text-anchor="middle" fill="white">Rate calculations</text>
+  
+  <rect x="940" y="385" width="190" height="85" fill="#CC4A1F" stroke="white" stroke-width="2" rx="6"/>
+  <text x="1035" y="410" font-size="13" font-weight="bold" text-anchor="middle" fill="white">🚨 Alert Manager</text>
+  <text x="1035" y="430" font-size="10" text-anchor="middle" fill="white">Rules evaluation</text>
+  <text x="1035" y="448" font-size="9" text-anchor="middle" fill="white">Notification routing</text>
+  <text x="1035" y="463" font-size="9" text-anchor="middle" fill="white">Email, Slack, PagerDuty</text>
+  
+  <!-- Query arrow -->
+  <line x1="700" y1="490" x2="700" y2="540" stroke="#F46800" stroke-width="3" marker-end="url(#arrow2)"/>
+  <text x="740" y="520" font-size="11" font-weight="bold" fill="#F46800">HTTP API / PromQL</text>
+  
+  <!-- Grafana -->
+  <rect x="250" y="540" width="900" height="200" fill="#F46800" stroke="#D95F00" stroke-width="3" rx="8"/>
+  <text x="700" y="575" font-size="22" font-weight="bold" text-anchor="middle" fill="white">📈 Grafana Dashboards</text>
+  <text x="700" y="598" font-size="12" text-anchor="middle" fill="white">Visualization & Analytics Platform</text>
+  
+  <!-- Dashboard Panels -->
+  <rect x="280" y="615" width="250" height="100" fill="#FF8C42" stroke="white" stroke-width="2" rx="6"/>
+  <text x="405" y="640" font-size="13" font-weight="bold" text-anchor="middle" fill="white">🖥️ Cluster Overview</text>
+  <text x="405" y="660" font-size="10" text-anchor="middle" fill="white">• Node CPU/Memory usage</text>
+  <text x="405" y="678" font-size="10" text-anchor="middle" fill="white">• Pod status & health</text>
+  <text x="405" y="696" font-size="10" text-anchor="middle" fill="white">• Network traffic</text>
+  
+  <rect x="550" y="615" width="250" height="100" fill="#FF8C42" stroke="white" stroke-width="2" rx="6"/>
+  <text x="675" y="640" font-size="13" font-weight="bold" text-anchor="middle" fill="white">📊 Application Metrics</text>
+  <text x="675" y="660" font-size="10" text-anchor="middle" fill="white">• Request rate & latency</text>
+  <text x="675" y="678" font-size="10" text-anchor="middle" fill="white">• Error rate (5xx, 4xx)</text>
+  <text x="675" y="696" font-size="10" text-anchor="middle" fill="white">• API endpoint performance</text>
+  
+  <rect x="820" y="615" width="310" height="100" fill="#FF8C42" stroke="white" stroke-width="2" rx="6"/>
+  <text x="975" y="640" font-size="13" font-weight="bold" text-anchor="middle" fill="white">💾 Database & Cache</text>
+  <text x="975" y="660" font-size="10" text-anchor="middle" fill="white">• DB connection pool status</text>
+  <text x="975" y="678" font-size="10" text-anchor="middle" fill="white">• Query execution time</text>
+  <text x="975" y="696" font-size="10" text-anchor="middle" fill="white">• Redis cache hit/miss ratio</text>
+  
+  <!-- Alert Rules -->
+  <rect x="50" y="770" width="650" height="200" fill="#E74C3C" stroke="#C0392B" stroke-width="3" rx="8"/>
+  <text x="375" y="805" font-size="18" font-weight="bold" text-anchor="middle" fill="white">🚨 Alert Rules (Active)</text>
+  
+  <rect x="80" y="825" width="280" height="60" fill="#C0392B" stroke="white" stroke-width="1" rx="4"/>
+  <text x="220" y="845" font-size="12" font-weight="bold" text-anchor="middle" fill="white">High CPU Usage</text>
+  <text x="220" y="865" font-size="10" text-anchor="middle" fill="white">Trigger: CPU > 80% for 5min</text>
+  
+  <rect x="380" y="825" width="280" height="60" fill="#C0392B" stroke="white" stroke-width="1" rx="4"/>
+  <text x="520" y="845" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Pod Crash Loop</text>
+  <text x="520" y="865" font-size="10" text-anchor="middle" fill="white">Trigger: Restart count > 5</text>
+  
+  <rect x="80" y="900" width="280" height="60" fill="#C0392B" stroke="white" stroke-width="1" rx="4"/>
+  <text x="220" y="920" font-size="12" font-weight="bold" text-anchor="middle" fill="white">High Error Rate</text>
+  <text x="220" y="940" font-size="10" text-anchor="middle" fill="white">Trigger: 5xx > 5% for 10min</text>
+  
+  <rect x="380" y="900" width="280" height="60" fill="#C0392B" stroke="white" stroke-width="1" rx="4"/>
+  <text x="520" y="920" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Low Disk Space</text>
+  <text x="520" y="940" font-size="10" text-anchor="middle" fill="white">Trigger: Disk < 15%</text>
+  
+  <!-- Notification Channels -->
+  <rect x="730" y="770" width="620" height="200" fill="#3498DB" stroke="#2980B9" stroke-width="3" rx="8"/>
+  <text x="1040" y="805" font-size="18" font-weight="bold" text-anchor="middle" fill="white">📬 Notification Channels</text>
+  
+  <rect x="760" y="825" width="180" height="60" fill="#2980B9" stroke="white" stroke-width="1" rx="4"/>
+  <text x="850" y="850" font-size="13" font-weight="bold" text-anchor="middle" fill="white">📧 Email</text>
+  <text x="850" y="870" font-size="9" text-anchor="middle" fill="white">Team notifications</text>
+  
+  <rect x="960" y="825" width="180" height="60" fill="#2980B9" stroke="white" stroke-width="1" rx="4"/>
+  <text x="1050" y="850" font-size="13" font-weight="bold" text-anchor="middle" fill="white">💬 Slack</text>
+  <text x="1050" y="870" font-size="9" text-anchor="middle" fill="white">#ops-alerts channel</text>
+  
+  <rect x="1160" y="825" width="170" height="60" fill="#2980B9" stroke="white" stroke-width="1" rx="4"/>
+  <text x="1245" y="850" font-size="13" font-weight="bold" text-anchor="middle" fill="white">📱 PagerDuty</text>
+  <text x="1245" y="870" font-size="9" text-anchor="middle" fill="white">On-call rotation</text>
+  
+  <rect x="760" y="900" width="570" height="60" fill="#2980B9" stroke="white" stroke-width="1" rx="4"/>
+  <text x="1045" y="925" font-size="13" font-weight="bold" text-anchor="middle" fill="white">☁️ CloudWatch Integration</text>
+  <text x="1045" y="945" font-size="9" text-anchor="middle" fill="white">AWS native monitoring & logging</text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#E6522C"/>
+    </marker>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#F46800"/>
+    </marker>
+  </defs>
+</svg>
