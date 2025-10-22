@@ -240,6 +240,26 @@ graph TB
 ```
 ---
 
+## Architecture Diagrams
+
+### AWS Infrastructure
+![AWS Infrastructure](./docs/diagrams/architecture/01-aws-infrastructure.svg)
+
+### CI/CD Pipeline  
+![CI/CD Pipeline](./docs/diagrams/architecture/02-cicd-pipeline.svg)
+
+### Kubernetes Cluster
+![Kubernetes Cluster](./docs/diagrams/architecture/03-kubernetes-cluster.svg)
+
+### Data Flow
+![Data Flow](./docs/diagrams/architecture/04-data-flow.svg)
+
+### Monitoring Stack
+![Monitoring](./docs/diagrams/architecture/05-monitoring-stack.svg)
+
+
+---
+
 ### 🔐 Network Architecture
 
 ```
